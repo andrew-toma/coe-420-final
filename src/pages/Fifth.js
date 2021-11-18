@@ -116,8 +116,8 @@ const Fifth =()=>{
                 <p id="formtext">Write a short Description of what  your company does</p>
                 <textarea Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description">
                 </textarea><br/>
-                <a href="#"><button id = "Create" type="button">Create Profile</button></a>
-                <a href="#"><button id = "Cancel" type="button">Cancel</button></a>
+                <button id = "Create" type="button">Create Profile</button>
+                <button id = "Cancel" type="button">Cancel</button>
                 </form>
                 {/* {<script>
                         $(document).ready(function () {

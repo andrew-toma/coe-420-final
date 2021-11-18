@@ -8,7 +8,7 @@ import FindMatchespic from '../photos/FindMatches.png';
 import EditProfilepic from '../photos/EditProfile.png';
 import{Link} from "react-router-dom";
 
-const Seventh =()=>{
+const Seventh =({handleLogout})=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -17,14 +17,14 @@ const Seventh =()=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <button id = "investors" type="button">Investors</button>
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     <button id = "about" type="button">About</button>
-                                    <Link to="/Login"><button id = "login" type="button">Log In</button></Link>
-                                    <Link to="/Second"><button id = "signUp" type="button">Sign Up</button></Link>
+                                    
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Hero from './Hero';
+import Seventh from './Seventh';
 import fire from './fire';
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
@@ -89,7 +89,7 @@ const Login = ()=>{
     <div>
       
       {user ? (
-        <Hero handleLogout={handleLogout}/>
+        <Seventh handleLogout={handleLogout}/>
       ):(
       
             <div>

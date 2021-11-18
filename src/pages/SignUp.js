@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Hero from './Hero';
+import Seventh from './Seventh';
 import fire from './fire';
 import './styles/page3.css';
 import './styles/Navbar.css';
@@ -87,7 +87,7 @@ const SignUp = ()=>{
         <div>
       
                     {user ? (
-                        <Hero handleLogout={handleLogout}/>
+                        <Seventh handleLogout={handleLogout}/>
                     ):(
             
                     <div>
@@ -114,7 +114,7 @@ const SignUp = ()=>{
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
-                                <a href="#"><button id = "submit" type="button" onClick={handleSignUp}>Sign Up</button></a>
+                                <button id = "submit" type="button" onClick={handleSignUp}>Sign Up</button>
 
                             </form>
 

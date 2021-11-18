@@ -4,7 +4,7 @@ import './styles/page3.css';
 import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {yesnoCheck} from './websiterad';
+//import {yesnoCheck} from './websiterad';
 const Sixth =()=>{
     // window.onload = ()=> {
     //     document.getElementById('ifYes').style.display = 'none';
@@ -49,8 +49,8 @@ const Sixth =()=>{
                     </div>
                     <p id="formtext">Enter your phone number:</p>
                     <input class="input textbox"type="text" placeholder="+ --- --- --- ----" required/>
-                    <a href="#"><button id = "Create" type="button">Create Profile</button></a>
-                    <a href="#"><button id = "Cancel" type="button">Cancel</button></a>
+                    <button id = "Create" type="button">Create Profile</button>
+                    <button id = "Cancel" type="button">Cancel</button>
                     </web>
                 </form>
 
