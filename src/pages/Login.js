@@ -117,7 +117,7 @@ const Login = ()=>{
                         <input class="input"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                       </div>
                       <p className="errorMsg">{passwordError}</p>
-                      <a href="#"><button id = "submit" type="button"  onClick={handleLogin}>Login</button></a>
+                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={handleLogin}>Login</button></Link>
                       </form>
 
             </div>
