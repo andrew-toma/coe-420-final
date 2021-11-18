@@ -1,0 +1,85 @@
+@charset "UTF-8";
+#navbartext{
+	color:white;
+	text-align:right;
+	margin-top:15px;
+}
+#navbarlink{
+	color:black;
+	
+}
+#formtext{
+	font-family:Verdana, sans-serif;
+	font-weight:bold;
+	margin-top:30px;
+}
+#signUpForm{
+margin: auto;
+width: 60%;
+padding: 10px;
+
+}
+.input{
+	width:99%;
+	height:50px;
+	color:#110D28;
+	font-family:Verdana, sans-serif;
+}
+#input{
+	width:49%;
+	
+}
+#submit{
+	height:40px;
+	width:100px;
+	font-Size:medium;
+	font-weight: bold;
+	color:White;
+	background-color: #FF9E2D;
+	border-radius: 3px;
+	border: 0px;
+	font-family:Verdana, sans-serif;
+	margin-top:30px;
+}
+
+.logo{
+
+	width:20px;
+	height: 20px;
+	color:#110D28;
+}
+
+.textbox{
+	width:100%;
+	overflow:hidden;
+	font-size:20px;
+	border: 2px solid #FF9E2D;;
+	border-radius:24px;
+	transition: 0.25s;
+  }
+  
+  .textbox:hover{
+  
+	background-color: lightgrey;
+	
+  }
+  
+  .textbox i {
+  
+	width:26px;
+	float:left;
+	text-align: center;
+  }
+  
+  .textbox input{
+  
+	border:none;
+	outline:none;
+	background:none;
+	color:#110D28;
+	font-size:18px;
+	width:80%;
+	float:left;
+	margin:0 10px;
+  
+  }

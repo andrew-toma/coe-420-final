@@ -1,24 +1,35 @@
+import React, {useState, useEffect} from 'react';
+// import './App.css';
 import logo from './logo.svg';
-import './App.css';
+import First from "./pages/First";
+import Second from "./pages/Second";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Fifth from "./pages/Fifth";
+import Sixth from "./pages/Sixth";
 
-function App() {
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const App = () =>{
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Router> 
+    <div className="App">    
+   
+    <Switch>
+      <Route exact path="/" component={First}/>
+      <Route path="/Second" component={Second} />
+      <Route path="/SignUp" component={SignUp} />
+      <Route path="/Login" component={Login} />
+      <Route path="/Fifth" component={Fifth} />
+      <Route path="/Sixth" component={Sixth} />
+    </Switch>
+  
+    </div>    
+    </Router> 
+  
   );
 }
 

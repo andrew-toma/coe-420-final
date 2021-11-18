@@ -1,0 +1,42 @@
+@charset "UTF-8"; 
+#header{
+	font-size:30px;
+	text-align:center;
+	font-weight: bold;
+	margin-top:100px;
+	font-family:Verdana, sans-serif;
+
+}
+#text{
+	font-family:Verdana, sans-serif;
+	
+}
+#btnText
+{
+	font-weight: bold;
+	font-family:Verdana, sans-serif;
+
+}
+.card-body{
+	background-color:transparent;
+	border: 3px solid #FF9E2D;
+}
+.card-title{
+	Text-align:center;
+}
+.btn{
+	margin-left:22%;
+	width:150px;
+	height:60px;
+	border-radius:10px;
+	font-size:25px;
+	margin-top:30px;
+}
+#investorIMG{
+	height:300px;
+	width:300px;
+}
+#startUpIMG{
+	height:300px;
+	width:300px;
+}
