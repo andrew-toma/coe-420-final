@@ -170,7 +170,7 @@ const SignUp = ()=>{
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
-                                <button id = "submit" type="button" onClick={handleLogin, addInvestorUser}>Sign Up</button>
+                                <button id = "submit" type="button" onClick={addInvestorUser}>Sign Up</button>
 
                             </form>
 
