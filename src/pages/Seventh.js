@@ -5,7 +5,7 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PostBlogpic from '../photos/PostBlog.png';
 import FindMatchespic from '../photos/FindMatches.png';
-import EditProfilepic from '../photos/EditProfile.png';
+import Messagepic from '../photos/Message.png';
 import{Link} from "react-router-dom";
 
 const Seventh =({handleLogout})=>{
@@ -24,7 +24,7 @@ const Seventh =({handleLogout})=>{
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     <button id = "about" type="button">About</button>
                                     
-                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
+                                    <Link to="/"><button id = "signUp" type="button"> {/*here I should get the user account name from database and display it, then onclick a dropdown will appear with the function to edit profile and go to the settings */}</button></Link> 
                                 </div>
                             </div>
                         </div>
@@ -49,16 +49,16 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                                <Link to="/SignUp"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
+                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
                         </div>
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={EditProfilepic} class="card-img-top" alt="..."/>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
-                                <Link to="/SignUp"><button id="btnText" type="button" class="btn btn-dark">Edit Profile</button></Link>
+                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
                         </div>
                         </div>
