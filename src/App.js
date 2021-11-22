@@ -26,7 +26,7 @@ const App = () =>{
       <Route path="/Sixth" component={Sixth} />
       <Route path="/Seventh" component={Seventh} />
     </Switch>
-  
+    
     </div>    
     </Router> 
   

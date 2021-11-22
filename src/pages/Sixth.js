@@ -6,11 +6,8 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import {yesnoCheck} from './websiterad';
 const Sixth =()=>{
-    // window.onload = ()=> {
-    //     document.getElementById('ifYes').style.display = 'none';
-    //     document.getElementById('ifNo').style.display = 'none';
-    // }
     function yesnoCheck() {
+        
         if (document.getElementById('yesCheck').checked) {
             document.getElementById('ifYes').style.display = 'block';
     
@@ -19,12 +16,6 @@ const Sixth =()=>{
             document.getElementById('ifYes').style.display = 'none';
        }
     }
-    //         (document).ready(function () {
-    //       ('select').selectize({
-    //           sortField: 'text'
-    //       });
-    //   });
-   
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -41,8 +32,8 @@ const Sixth =()=>{
                 <form id = "signUpForm">
                     <p id="formtext">Does your company have website?</p>
                     <web>
-                    <input type="radio" onclick={()=>yesnoCheck()} name="websiterad" id="yesCheck"/><label for="websiterad">Yes</label>
-                    <input type="radio" onclick={()=>yesnoCheck()} name="websiterad" id="noCheck"/><label for="websiterad">No</label>
+                    <input type="radio" onChange={()=>yesnoCheck()} name="websiterad" id="yesCheck"/><label for="websiterad">Yes</label>
+                    <input type="radio" onChange={()=>yesnoCheck()} name="websiterad" id="noCheck"/><label for="websiterad">No</label>
                     <div id="ifYes" style={{display:'none'}}>
                     <p id="formtext">what is your company's website?</p>
                     <input class="input textbox"type="text" id="websitename" name="websitename" placeholder="website.com"/>
