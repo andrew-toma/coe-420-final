@@ -7,6 +7,7 @@ import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
+import Axios from "axios";
 
 const Login = ()=>{
   const [user, setUser] = useState('');
@@ -16,6 +17,14 @@ const Login = ()=>{
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
 
+  const loginUser = () => {
+    Axios.post("http://localhost:3001/login", {
+      email: email,
+      password: password,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
@@ -117,7 +126,7 @@ const Login = ()=>{
                         <input class="input"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                       </div>
                       <p className="errorMsg">{passwordError}</p>
-                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={handleLogin}>Login</button></Link>
+                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={loginUser}>Login</button></Link>
                       </form>
 
             </div>
