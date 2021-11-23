@@ -17,13 +17,13 @@ const Seventh =({handleLogout})=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-7">
-                                </div>
                                 <div class="col-md-5">
+                                </div>
+                                <div class="col-md-6">
                                     <button id = "investors" type="button">Investors</button>
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     <button id = "about" type="button">About</button>
-                                    
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
                                     <Link to="/"><button id = "signUp" type="button"> {/*here I should get the user account name from database and display it, then onclick a dropdown will appear with the function to edit profile and go to the settings */}</button></Link> 
                                 </div>
                             </div>

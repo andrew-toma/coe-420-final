@@ -20,6 +20,8 @@ const SignUp = ()=>{
   const [NewcompanyName, setNewcompanyName] = useState('');
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
+  const [investorList, setinvestorList] = useState([]);
+  
   const displayInfo = ()=>{
     console.log(companyName);
   }
@@ -31,9 +33,55 @@ const SignUp = ()=>{
       email: email,
       password: password,
     }).then(() => {
-      console.log("success");
+      setinvestorList([
+        ...investorList,
+        {
+          companyName: companyName,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+        },
+      ]);
     });
   };
+  const getEmployees = () => {
+    Axios.get("http://localhost:3001/employees").then((response) => {
+      setinvestorList(response.data);
+    });
+  };
+
+  // const updateInvestor = (id) => {
+  //   Axios.put("http://localhost:3001/update", { wage: newWage, id: id }).then(
+  //     (response) => {
+  //       setinvestorList(
+  //         investorList.map((val) => {
+  //           return val.id == id
+  //             ? {
+  //                 id: val.id,
+  //                 companyName: val.companyName,
+  //                 firstName: val.firstName,
+  //                 lastName: val.lastName,
+  //                 email: val.email,
+  //                 password: val.password,
+  //               }
+  //             : val;
+  //         })
+  //       );
+  //     }
+  //   );
+  // };
+
+  const deleteEmployee = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+      setinvestorList(
+        investorList.filter((val) => {
+          return val.id != id;
+        })
+      );
+    });
+  };
+
   //USER AUTENTICATION FUNCTIONS
   const clearInputs = ()=>{
     setEmail('');
@@ -46,25 +94,6 @@ const SignUp = ()=>{
     setPasswordError('');
 
   }
-
-  const handleLogin = ()=>{
-  clearErrors();
-  fire
-    .auth()
-    .signInWithEmailAndPassword(email,password)
-    .catch(err =>{
-      switch(err.code){
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-          setEmailError(err.message);
-          break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  };
 
   const handleSignUp = ()=>{
     clearErrors();
@@ -98,7 +127,14 @@ const SignUp = ()=>{
         setUser("");
       }
     })
-  }
+  };
+
+  const AddandSign = () =>{
+  
+    addUser();
+    handleSignUp();
+  
+  };
 
   useEffect(()=>{
     authListener();
@@ -135,7 +171,7 @@ const SignUp = ()=>{
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
-                                <button id = "submit" type="button" onClick={addUser} >Sign Up</button>
+                                <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
 
                             </form>
 
