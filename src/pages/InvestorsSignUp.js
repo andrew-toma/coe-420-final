@@ -9,7 +9,7 @@ import Axios from "axios";
 
 
 
-const SignUp = ()=>{
+const StartUpsSignUp = ()=>{
   const [user, setUser] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,18 +21,18 @@ const SignUp = ()=>{
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [investorList, setinvestorList] = useState([]);
-  
   const displayInfo = ()=>{
     console.log(companyName);
   }
   const addUser = () => {
-    Axios.post("http://localhost:3001/create", {
+    Axios.post("http://localhost:3001/createinvestor", {
       companyName: companyName,
       firstName: firstName,
       lastName: lastName,
       email: email,
       password: password,
     }).then(() => {
+      console.log("success");
       setinvestorList([
         ...investorList,
         {
@@ -95,6 +95,8 @@ const SignUp = ()=>{
 
   }
 
+
+
   const handleSignUp = ()=>{
     clearErrors();
     fire
@@ -127,13 +129,12 @@ const SignUp = ()=>{
         setUser("");
       }
     })
-  };
-
+  }
   const AddandSign = () =>{
-  
+
     addUser();
     handleSignUp();
-  
+
   };
 
   useEffect(()=>{
@@ -188,4 +189,4 @@ const SignUp = ()=>{
     
 
 
-export default SignUp;
+export default StartUpsSignUp;

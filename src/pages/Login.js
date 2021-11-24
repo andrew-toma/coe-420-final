@@ -16,14 +16,23 @@ const Login = ()=>{
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
-
+  const [axiosresponse, setaxiosresponse] = useState(null);
   const loginUser = () => {
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("http://localhost:3001/startupslogin", {
       email: email,
       password: password,
     }).then((response) => {
-      console.log(response);
+      console.log(response.data);
+      setaxiosresponse(response);
     });
+    if(!axiosresponse){
+      Axios.post("http://localhost:3001/investorslogin", {
+        email: email,
+        password: password,
+      }).then((response) => {
+        console.log(response.data);
+      });
+    }
   };
   const clearInputs = ()=>{
     setEmail('');
@@ -36,25 +45,6 @@ const Login = ()=>{
     setPasswordError('');
 
   }
-
-  const handleLogin = ()=>{
-  clearErrors();
-  fire
-    .auth()
-    .signInWithEmailAndPassword(email,password)
-    .catch(err =>{
-      switch(err.code){
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-          setEmailError(err.message);
-          break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  };
 
   const handleLogout = () =>{
     fire.auth().signOut();

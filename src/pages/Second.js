@@ -40,7 +40,7 @@ const Second =()=>{
                         <div class="card-body">
                             <img id="investorIMG" src={Investorpic} class="card-img-top" alt="..."/>
                             <h5 id="text" class="card-title">Find the perfect verified start-ups for your investments.</h5>
-                            <Link to="/SignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
+                            <Link to="/InvestorsSignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
                         </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const Second =()=>{
                         <div class="card-body">
                             <img id="startUpIMG" src={Startuppic} class="card-img-top" alt="..."/>
                             <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                            <Link to="/SignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
+                            <Link to="/StartUpsSignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
                         </div>
                         </div>
                     </div>
