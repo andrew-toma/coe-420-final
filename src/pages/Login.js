@@ -6,7 +6,8 @@ import { FaLock } from "react-icons/fa";
 import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Axios from "axios";
 
 const Login = ()=>{
@@ -17,6 +18,8 @@ const Login = ()=>{
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
   const [axiosresponse, setaxiosresponse] = useState(null);
+  const history = useHistory();
+
   const loginUser = () => {
     Axios.post("http://localhost:3001/startupslogin", {
       email: email,
@@ -31,9 +34,13 @@ const Login = ()=>{
         password: password,
       }).then((response) => {
         console.log(response.data);
+        setaxiosresponse(response);
+
       });
     }
+
   };
+  
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
@@ -61,9 +68,23 @@ const Login = ()=>{
       }
     })
   }
-
+  const myPromise = new Promise((resolve, reject) => {      
+    if(axiosresponse) {  
+      if(axiosresponse.data.length > 0){
+        resolve('Promise is resolved successfully.');  
+      }else{
+        reject('Promise is rejected');  
+      }
+    } else {    
+        reject('Promise is rejected');  
+    }
+  });
   useEffect(()=>{
     authListener();
+    myPromise.then((message) => {
+    console.log( axiosresponse)  ;
+    history.push("/Seventh");
+    });
   })
   return(
 
@@ -89,7 +110,7 @@ const Login = ()=>{
                       <p id="formtext">Enter your Email</p>
                       <div class="textbox">
                         <FaUserAlt class="logo"/>
-                        <input class="input"type="text" placeholder="email@gmail.com" required value={email} onChange={e=>setEmail(e.target.value)}/><br/>
+                        <input class="input"type="email" placeholder="email@gmail.com" required value={email} onChange={e=>setEmail(e.target.value)}/><br/>
                       </div>
                       <p className="errorMsg">{emailError}</p>
                       <p id="formtext">Enter your password</p>
@@ -98,7 +119,7 @@ const Login = ()=>{
                         <input class="input"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                       </div>
                       <p className="errorMsg">{passwordError}</p>
-                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={loginUser}>Login</button></Link>
+                      <button id = "submit" type="button"  onClick={loginUser}>Login</button>
                       </form>
 
             </div>
