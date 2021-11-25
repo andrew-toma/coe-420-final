@@ -106,11 +106,6 @@ const StartUpsSignUp = ()=>{
   return(
 
         <div>
-      
-                    {user ? (
-                        <Seventh handleLogout={handleLogout}/>
-                    ):(
-            
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                                 <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
@@ -140,12 +135,6 @@ const StartUpsSignUp = ()=>{
                             </form>
 
                     </div>
-            )
-            }
-    
-      
-        
-       
         </div>
         )
           }
