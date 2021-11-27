@@ -40,7 +40,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create blog posts to connect with Investors and like-minded Businesses.</h5>
-                                <Link to="/SignUp"><button id="btnText" type="button" class="btn btn-dark">Post Blog</button></Link>
+                                <Link to=""><button id="btnText" type="button" class="btn btn-dark">Post Blog</button></Link>
                             </div>
                             </div>
                         </div>

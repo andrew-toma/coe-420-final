@@ -187,6 +187,4 @@ const InvestorsSignUp = ()=>{
         )
           }
     
-
-
 export default InvestorsSignUp;

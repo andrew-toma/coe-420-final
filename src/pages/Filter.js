@@ -13,6 +13,59 @@ const Filter =()=>{
       setinvestorList(response.data);
     });
   };
+
+  const compareObjects = (object1, object2, key) =>{
+    const obj1 = object1[key].toLowerCase()
+    const obj2 = object2[key].toLowerCase()
+  
+    if (obj1 < obj2) {
+      return 1
+    }
+    if (obj1 > obj2) {
+      return -1
+    }
+    return 0
+  }
+  
+  
+  const sortArray=()=>
+  {
+    investorList.sort((a, b) => {
+      return compareObjects(a, b, 'companyName')
+    })
+
+    investorList.map((val,key)=>{
+        
+      return (
+          <div className="user" key={key}>
+              <p>{val.companyName}</p>
+          </div>
+      );
+  })
+    // function compareFunction(a,b){
+
+    //   return b-a;
+    // }
+      // investorList.sort(function(a,b)
+      //   {
+      //     if(a.companyName.toLowerCase() < b.companyName.toLowerCase()){
+      //       return 1;
+      //     }
+      //     if(a.companyName.toLowerCase() > b.companyName.toLowerCase()){
+      //       return -1;
+      //     }
+      //     return 0;
+      //     })
+      //     .map((val,key)=>{
+                
+      //       return (
+      //         <div className="user" key={key}>
+      //             <p>{val.companyName}</p>
+      //         </div>
+      //          );
+      //       })}
+  }
+
  
     return(
         <div>
@@ -81,23 +134,7 @@ const Filter =()=>{
                 <option value={val.companyName} key={key}>
                   {val.companyName}
                 </option>
-                ))}
-
-              {investorList.filter((val)=>{
-                  if(searchTerm == ""){
-                      return val
-                  }
-                  
-
-              }).map((val,key)=>{
-                
-                return (
-                  <div className="user" key={key}>
-                      <p>{val.companyName}</p>
-                  </div>
-                   );
-                })}
-               
+                ))}               
             </select>
           </div>
           
@@ -118,6 +155,7 @@ const Filter =()=>{
                   </div>
               );
           })}
+          <button onClick={sortArray}>sort</button>
       </div>
     )
 }
