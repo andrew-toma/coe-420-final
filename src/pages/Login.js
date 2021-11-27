@@ -71,7 +71,12 @@ const Login = ()=>{
       }
     })
   }
-
+  const loginUserandhandleLogin = () =>{
+  
+    loginUser();
+    handleLogin();
+  
+  };
   useEffect(()=>{
     authListener();
   })
@@ -108,7 +113,7 @@ const Login = ()=>{
                         <input class="input"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                       </div>
                       <p className="errorMsg">{passwordError}</p>
-                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={loginUser}>Login</button></Link>
+                      <Link to = "/Seventh" ><button id = "submit" type="button"  onClick={loginUserandhandleLogin}>Login</button></Link>
                       </form>
 
             </div>
