@@ -34,12 +34,12 @@ const App = () =>{
     //   <Route path="/Blogs" component={Blogs} />
     // </Switch>
     
-    // </div>    
+    // </div>
     // </Router> 
     <div className="App">
 
     <Filter/>
-    </div>
+     </div>
   
   );
 }

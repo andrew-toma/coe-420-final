@@ -2,73 +2,62 @@ import React, {useState, useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
+import './styles/Navbar.css';
 import Axios from "axios";
 
 const Filter =()=>{
     
   const [investorList, setinvestorList] = useState([]);
   const[searchTerm,setSearchTerm] = useState("");
+  const[order, setOrder] = useState("ASC");
   const getEmployees = () => {
-    Axios.get("http://localhost:3001/employees").then((response) => {
+    Axios.get("http://localhost:3001/investors").then((response) => {
       setinvestorList(response.data);
     });
   };
-
-  const compareObjects = (object1, object2, key) =>{
-    const obj1 = object1[key].toLowerCase()
-    const obj2 = object2[key].toLowerCase()
   
-    if (obj1 < obj2) {
-      return 1
-    }
-    if (obj1 > obj2) {
-      return -1
-    }
-    return 0
-  }
-  
-  
-  const sortArray=()=>
-  {
-    investorList.sort((a, b) => {
-      return compareObjects(a, b, 'companyName')
-    })
-
-    investorList.map((val,key)=>{
+  const sortArray = (col)=>{
+    console.log(investorList);
+    if(order =="ASC"){
+      investorList.sort((a, b) => {
+        if (a[col].toLowerCase() < b[col].toLowerCase()) {
+          return 1
+        }
+        if (a[col].toLowerCase() > b[col].toLowerCase()) {
+          return -1
+        }
         
-      return (
-          <div className="user" key={key}>
-              <p>{val.companyName}</p>
-          </div>
-      );
-  })
-    // function compareFunction(a,b){
+      })
+      setOrder("DSC");
+    }
+    if(order == "DSC"){
+      investorList.sort((a, b) => {
+        if (a[col].toLowerCase() > b[col].toLowerCase()) {
+          return 1
+        }
+        if (a[col].toLowerCase() < b[col].toLowerCase()) {
+          return -1
+        }
+        
+      })
+      setOrder("ASC");
+    }
+      // const sorted = investorList.slice();
+      // .map((val,key)=>{
+          
+      //   return (
+      //       <div className="user" key={key}>
+      //           <p>{val.companyName}</p>
+      //       </div>
+      //   );
+      // })
 
-    //   return b-a;
-    // }
-      // investorList.sort(function(a,b)
-      //   {
-      //     if(a.companyName.toLowerCase() < b.companyName.toLowerCase()){
-      //       return 1;
-      //     }
-      //     if(a.companyName.toLowerCase() > b.companyName.toLowerCase()){
-      //       return -1;
-      //     }
-      //     return 0;
-      //     })
-      //     .map((val,key)=>{
-                
-      //       return (
-      //         <div className="user" key={key}>
-      //             <p>{val.companyName}</p>
-      //         </div>
-      //          );
-      //       })}
   }
-
- 
+  
     return(
-        <div>
+      <div className="container">
+      <div className="row">
+        <div className="col-sm-3">
             
           <div className="row my-5">
             <div className="col">
@@ -85,8 +74,16 @@ const Filter =()=>{
                 />
             </div>
       
-          <div className="col-sm-12 my-2">
+          <div className="col-sm-12 my-2" style={{padding:'10px'}}>
             <label htmlFor="gender">Industry</label>
+            <input type="text" 
+                placeholder="Search by Industry..." 
+                className="form-control"
+                id="industryName"
+                onClick={getEmployees} 
+                onChange={(event) => {setSearchTerm(event.target.value)}}
+                />
+              <br></br>
             <select
               className="form-control"
               id="gender"
@@ -101,22 +98,6 @@ const Filter =()=>{
                   {val.companyName}
                 </option>
                 ))}
-
-              {investorList.filter((val)=>{
-                  if(searchTerm == ""){
-                      return val
-                  }
-                  
-
-              }).map((val,key)=>{
-                
-                return (
-                  <div className="user" key={key}>
-                      <p>{val.companyName}</p>
-                  </div>
-                   );
-                })}
-               
             </select>
           </div>
           <div className="col-sm-12 my-2">
@@ -137,8 +118,10 @@ const Filter =()=>{
                 ))}               
             </select>
           </div>
-          
         </div>
+          <button id = "sort" type="button" onClick={()=>sortArray("companyName")} style={{marginBottom:'8px'}}>Sort by Company Name</button>
+          <button id = "sort" type="button" onClick={()=>sortArray("industry")} style={{marginBottom:'8px'}}>Sort by Industry</button>
+          <button id = "sort" type="button" onClick={()=>sortArray("emirate")}>Sort by Emirate</button>
         {investorList.filter((val)=>{
                   if(searchTerm == ""){
                       return val
@@ -147,7 +130,8 @@ const Filter =()=>{
                       return val
                   }
 
-              }).map((val,key)=>{
+              })
+              .map((val,key)=>{
         
               return (
                   <div className="user" key={key}>
@@ -155,9 +139,13 @@ const Filter =()=>{
                   </div>
               );
           })}
-          <button onClick={sortArray}>sort</button>
+         
+         
+         </div>
+        
+        </div>
       </div>
-    )
+    );
 }
 
 export default Filter;
