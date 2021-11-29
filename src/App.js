@@ -9,6 +9,7 @@ import Sixth from "./pages/Sixth";
 import Seventh from "./pages/Seventh";
 import Blogs from './pages/Blogs';
 import Filter from './pages/Filter';
+import ViewProfile from './pages/ViewProfile';
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -32,6 +33,8 @@ const App = () =>{
     //   <Route path="/Sixth" component={Sixth} />
     //   <Route path="/Seventh" component={Seventh} />
     //   <Route path="/Blogs" component={Blogs} />
+    //   <Route path="/Filter" component={Filter} />
+    //   <Route path="/ViewProfile" component={ViewProfile} />
     // </Switch>
     
     // </div>

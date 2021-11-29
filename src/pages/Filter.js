@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-
+import React, {useState,useEffect} from 'react';
+import PersonItem from './PersonItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from "react-router-dom";
 import './styles/Navbar.css';
 import Axios from "axios";
 
@@ -11,7 +10,8 @@ const Filter =()=>{
   const[searchTerm,setSearchTerm] = useState("");
   const[order, setOrder] = useState("ASC");
   const getEmployees = () => {
-    Axios.get("http://localhost:3001/investors").then((response) => {
+    Axios.get("http://localhost:3001/investors").then((response) => 
+    {
       setinvestorList(response.data);
     });
   };
@@ -56,95 +56,102 @@ const Filter =()=>{
   
     return(
       <div className="container">
-      <div className="row">
-        <div className="col-sm-3">
-            
-          <div className="row my-5">
-            <div className="col">
-              <h4 className="border-bottom">Filters</h4>
+        <div className="row">
+          <div className="col-sm-3">
+            <div className="row my-5">
+              <div className="col">
+                <h4 className="border-bottom">Filters</h4>
+                <div className="investors">
+                  <button onClick={getEmployees} type="button">get</button>
+                </div>
+              </div>
+              <div className="col-sm-12 my-2">
+                <label htmlFor="name">Company Name</label>
+                <input type="text" 
+                  placeholder="Search by Company Name..." 
+                  className="form-control"
+                  id="companyName"
+                  // onClick={getEmployees} 
+                  onChange={(event) => {setSearchTerm(event.target.value)}}
+                  />
+              </div>
+              <div className="col-sm-12 my-2" style={{padding:'10px'}}>
+                <label htmlFor="gender">Industry</label>
+                <input type="text" 
+                    placeholder="Search by Industry..." 
+                    className="form-control"
+                    id="industryName"
+                    // onClick={getEmployees} 
+                    onChange={(event) => {setSearchTerm(event.target.value)}}
+                    />
+                  <br></br>
+                <select
+                  className="form-control"
+                  id="gender"
+                  placeholder="Select Industry"
+                  // onClick={getEmployees}
+                  onChange={(event) => {setSearchTerm(event.target.value)}}
+                >
+                  <option >Select Industry</option>
+                  {investorList.map((val,key)=>(
+                    
+                    <option value={val.companyName} key={key}>
+                      {val.companyName}
+                    </option>
+                    ))}
+                </select>
+              </div>
+              <div className="col-sm-12 my-2">
+                <label htmlFor="gender">Emirate</label>
+                <select
+                  className="form-control"
+                  id="gender"
+                  placeholder="Select Emirate"
+                  // onClick={getEmployees}
+                  onChange={(event) => {setSearchTerm(event.target.value)}}
+                >
+                  <option >Select Emirate</option>
+                  {investorList.map((val,key)=>(
+                    
+                    <option value={val.companyName} key={key}>
+                      {val.companyName}
+                    </option>
+                    ))}               
+                </select>
+              </div>
             </div>
-            <div className="col-sm-12 my-2">
-              <label htmlFor="name">Company Name</label>
-              <input type="text" 
-                placeholder="Search by Company Name..." 
-                className="form-control"
-                id="companyName"
-                onClick={getEmployees} 
-                onChange={(event) => {setSearchTerm(event.target.value)}}
-                />
-            </div>
-      
-          <div className="col-sm-12 my-2" style={{padding:'10px'}}>
-            <label htmlFor="gender">Industry</label>
-            <input type="text" 
-                placeholder="Search by Industry..." 
-                className="form-control"
-                id="industryName"
-                onClick={getEmployees} 
-                onChange={(event) => {setSearchTerm(event.target.value)}}
-                />
-              <br></br>
-            <select
-              className="form-control"
-              id="gender"
-              placeholder="Select Industry"
-              onClick={getEmployees}
-              onChange={(event) => {setSearchTerm(event.target.value)}}
-            >
-              <option >Select Industry</option>
-              {investorList.map((val,key)=>(
-                
-                <option value={val.companyName} key={key}>
-                  {val.companyName}
-                </option>
-                ))}
-            </select>
-          </div>
-          <div className="col-sm-12 my-2">
-            <label htmlFor="gender">Emirate</label>
-            <select
-              className="form-control"
-              id="gender"
-              placeholder="Select Emirate"
-              onClick={getEmployees}
-              onChange={(event) => {setSearchTerm(event.target.value)}}
-            >
-              <option >Select Emirate</option>
-              {investorList.map((val,key)=>(
-                
-                <option value={val.companyName} key={key}>
-                  {val.companyName}
-                </option>
-                ))}               
-            </select>
+            <button id = "sort" type="button" onClick={()=>sortArray("companyName")} style={{marginBottom:'8px'}}>Sort by Company Name</button>
+            <button id = "sort" type="button" onClick={()=>sortArray("industry")} style={{marginBottom:'8px'}}>Sort by Industry</button>
+            <button id = "sort" type="button" onClick={()=>sortArray("emirate")}>Sort by Emirate</button>
+          
+              
           </div>
         </div>
-          <button id = "sort" type="button" onClick={()=>sortArray("companyName")} style={{marginBottom:'8px'}}>Sort by Company Name</button>
-          <button id = "sort" type="button" onClick={()=>sortArray("industry")} style={{marginBottom:'8px'}}>Sort by Industry</button>
-          <button id = "sort" type="button" onClick={()=>sortArray("emirate")}>Sort by Emirate</button>
-        {investorList.filter((val)=>{
-                  if(searchTerm == ""){
-                      return val
-                  }
-                  else if(val.companyName.toLowerCase().includes(searchTerm.toLowerCase())){
-                      return val
-                  }
+        <div className ="app">
+      {investorList.filter((val)=>{
+        if(searchTerm == ""){
+            return val
+        }
+        else if(val.companyName.toLowerCase().includes(searchTerm.toLowerCase())){
+            return val
+        }
 
-              })
-              .map((val,key)=>{
-        
-              return (
-                  <div className="user" key={key}>
-                      <p>{val.companyName}</p>
-                  </div>
-              );
-          })}
-         
-         
-         </div>
-        
+    })
+    .map((val,key) => {
+      return (
+        <div className="col-sm-9">
+          <div className="row mt-5">
+          <PersonItem val={val} key={key} />
+          </div>
         </div>
+    );
+      
+      })
+  }
+  </div>
       </div>
+      
+  
     );
 }
 
