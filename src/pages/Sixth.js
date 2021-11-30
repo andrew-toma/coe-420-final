@@ -1,11 +1,12 @@
-import React from "react";
-
+import React, {useState} from "react";
 import './styles/page3.css';
 import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import {yesnoCheck} from './websiterad';
+
 const Sixth =()=>{
+    const [companyWebsite, setcompanyWebsite] = useState("");
+    const [phoneNumber, setphoneNumber] = useState("");
     function yesnoCheck() {
         
         if (document.getElementById('yesCheck').checked) {
@@ -19,7 +20,7 @@ const Sixth =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
+                    <span><img id = "logo" src="logo.png" alt="logo"/></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
@@ -36,10 +37,10 @@ const Sixth =()=>{
                     <input type="radio" onChange={()=>yesnoCheck()} name="websiterad" id="noCheck"/><label for="websiterad">No</label>
                     <div id="ifYes" style={{display:'none'}}>
                     <p id="formtext">what is your company's website?</p>
-                    <input class="input textbox"type="text" id="websitename" name="websitename" placeholder="website.com"/>
+                    <input class="input textbox"type="text" id="websitename" name="websitename" placeholder="website.com" required value={companyWebsite} onChange={(event)=>setcompanyWebsite(event.target.value)}/>
                     </div>
                     <p id="formtext">Enter your phone number:</p>
-                    <input class="input textbox"type="text" placeholder="+ --- --- --- ----" required/>
+                    <input class="input textbox"type="text" placeholder="+ --- --- --- ----" required value={phoneNumber} onChange={(event)=>setphoneNumber(event.target.value)}/>
                     <button id = "Create" type="button">Create Profile</button>
                     <button id = "Cancel" type="button">Cancel</button>
                     </web>

@@ -11,7 +11,7 @@ const Second =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">

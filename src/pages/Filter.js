@@ -1,9 +1,9 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import PersonItem from './PersonItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
 import Axios from "axios";
-
+import ViewProfile from './ViewProfile';
 const Filter =()=>{
     
   const [investorList, setinvestorList] = useState([]);
@@ -42,15 +42,6 @@ const Filter =()=>{
       })
       setOrder("ASC");
     }
-      // const sorted = investorList.slice();
-      // .map((val,key)=>{
-          
-      //   return (
-      //       <div className="user" key={key}>
-      //           <p>{val.companyName}</p>
-      //       </div>
-      //   );
-      // })
 
   }
   
@@ -60,10 +51,7 @@ const Filter =()=>{
           <div className="col-sm-3">
             <div className="row my-5">
               <div className="col">
-                <h4 className="border-bottom">Filters</h4>
-                <div className="investors">
-                  <button onClick={getEmployees} type="button">get</button>
-                </div>
+                <h4 className="border-bottom">Find Matches</h4>
               </div>
               <div className="col-sm-12 my-2">
                 <label htmlFor="name">Company Name</label>
@@ -71,7 +59,7 @@ const Filter =()=>{
                   placeholder="Search by Company Name..." 
                   className="form-control"
                   id="companyName"
-                  // onClick={getEmployees} 
+                  onClick={getEmployees} 
                   onChange={(event) => {setSearchTerm(event.target.value)}}
                   />
               </div>
@@ -81,7 +69,7 @@ const Filter =()=>{
                     placeholder="Search by Industry..." 
                     className="form-control"
                     id="industryName"
-                    // onClick={getEmployees} 
+                    onClick={getEmployees} 
                     onChange={(event) => {setSearchTerm(event.target.value)}}
                     />
                   <br></br>
@@ -89,14 +77,14 @@ const Filter =()=>{
                   className="form-control"
                   id="gender"
                   placeholder="Select Industry"
-                  // onClick={getEmployees}
+                  onClick={getEmployees}
                   onChange={(event) => {setSearchTerm(event.target.value)}}
                 >
                   <option >Select Industry</option>
                   {investorList.map((val,key)=>(
                     
-                    <option value={val.companyName} key={key}>
-                      {val.companyName}
+                    <option value={val.industry} key={key}>
+                      {val.industry}
                     </option>
                     ))}
                 </select>
@@ -107,14 +95,14 @@ const Filter =()=>{
                   className="form-control"
                   id="gender"
                   placeholder="Select Emirate"
-                  // onClick={getEmployees}
+                  onClick={getEmployees}
                   onChange={(event) => {setSearchTerm(event.target.value)}}
                 >
                   <option >Select Emirate</option>
                   {investorList.map((val,key)=>(
                     
-                    <option value={val.companyName} key={key}>
-                      {val.companyName}
+                    <option value={val.emirate} key={key}>
+                      {val.emirate}
                     </option>
                     ))}               
                 </select>
@@ -123,35 +111,41 @@ const Filter =()=>{
             <button id = "sort" type="button" onClick={()=>sortArray("companyName")} style={{marginBottom:'8px'}}>Sort by Company Name</button>
             <button id = "sort" type="button" onClick={()=>sortArray("industry")} style={{marginBottom:'8px'}}>Sort by Industry</button>
             <button id = "sort" type="button" onClick={()=>sortArray("emirate")}>Sort by Emirate</button>
+          </div>
           
-              
+          <div className="col-sm-9">
+            <div className="row mt-5">
+              {investorList.filter((val)=>{
+                if(searchTerm == ""){
+                    return val
+                }
+                else if(val.companyName.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return val
+                }
+                else if(val.firstName.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val
+                }
+                else if(val.lastName.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val
+                }
+                else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val
+                }
+                })
+                .map((val,key) => {
+                  
+                  return (
+                      <PersonItem val={val} key={key} />
+                      
+                    );
+                    
+                  })
+              }
+           </div>
           </div>
+          
         </div>
-        <div className ="app">
-      {investorList.filter((val)=>{
-        if(searchTerm == ""){
-            return val
-        }
-        else if(val.companyName.toLowerCase().includes(searchTerm.toLowerCase())){
-            return val
-        }
-
-    })
-    .map((val,key) => {
-      return (
-        <div className="col-sm-9">
-          <div className="row mt-5">
-          <PersonItem val={val} key={key} />
-          </div>
-        </div>
-    );
-      
-      })
-  }
-  </div>
       </div>
-      
-  
     );
 }
 

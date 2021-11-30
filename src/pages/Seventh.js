@@ -8,6 +8,7 @@ import FindMatchespic from '../photos/FindMatches.png';
 import Messagepic from '../photos/Message.png';
 import{Link} from "react-router-dom";
 
+
 const Seventh =({handleLogout})=>{
         return(
             <div>
@@ -49,7 +50,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
+                                <Link to="/Filter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
                         </div>

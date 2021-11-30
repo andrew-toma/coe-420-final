@@ -20,30 +20,26 @@ const App = () =>{
 
   return (
     
-    // <Router>  
-    // <div className="App">    
+    <Router>  
+    <div className="App">    
    
-    // <Switch>
-    //   <Route exact path="/" component={First}/>
-    //   <Route path="/Second" component={Second} />
-    //   <Route path="/StartUpsSignUp" component={StartUpsSignUp} />
-    //   <Route path="/InvestorsSignUp" component={InvestorsSignUp} />
-    //   <Route path="/Login" component={Login} />
-    //   <Route path="/Fifth" component={Fifth} />
-    //   <Route path="/Sixth" component={Sixth} />
-    //   <Route path="/Seventh" component={Seventh} />
-    //   <Route path="/Blogs" component={Blogs} />
-    //   <Route path="/Filter" component={Filter} />
-    //   <Route path="/ViewProfile" component={ViewProfile} />
-    // </Switch>
+    <Switch>
+      <Route exact path="/" component={First}/>
+      <Route path="/Second" component={Second} />
+      <Route path="/StartUpsSignUp" component={StartUpsSignUp} />
+      <Route path="/InvestorsSignUp" component={InvestorsSignUp} />
+      <Route path="/Login" component={Login} />
+      <Route path="/Fifth" component={Fifth} />
+      <Route path="/Sixth" component={Sixth} />
+      <Route path="/Seventh" component={Seventh} />
+      <Route path="/Blogs" component={Blogs} />
+      <Route path="/Filter" component={Filter} />
+      <Route path="/ViewProfile" component={ViewProfile} />
+    </Switch>
     
-    // </div>
-    // </Router> 
-    <div className="App">
-
-    <Filter/>
-     </div>
-  
+    </div>
+    </Router> 
+    
   );
 }
 

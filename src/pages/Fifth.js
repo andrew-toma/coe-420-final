@@ -5,7 +5,10 @@ import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const Fifth =()=>{
-
+    const [companyWebsite, setcompanyWebsite] = useState("");
+    const [numofPeople, setnumofPeople] = useState("");
+    const [industryName, setindustryName] = useState("");
+    const [emirateName, setemirateName] = useState("");
     function yesnoCheck() {
         
         if (document.getElementById('yesCheck').checked) {
@@ -20,7 +23,7 @@ const Fifth =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
+                    <span><img id = "logo" src="logo.png" alt="logo"/></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
@@ -35,15 +38,15 @@ const Fifth =()=>{
                     <input type="radio" onChange={()=>yesnoCheck()} name="websiterad" id="noCheck"/><label >No</label>
                     <div id="ifYes" style={{display:'none'}}>
                         <p id="formtext">what is your company's website?</p>
-                        <input class="input textbox"type="text" id="websitename" name="websitename" placeholder="website.com"/>
+                        <input class="input textbox"type="text" id="websitename" name="websitename" placeholder="website.com" required value={companyWebsite} onChange={(event)=>setcompanyWebsite(event.target.value)}/>
                     </div>
                     <p id="formtext">How many people are in your company?</p>
-                        <input type="radio" name ="numOfEmployee" id="1-10"/><label for="1-10"> 1-10 people</label><br/>
-                        <input type="radio" name ="numOfEmployee" id="10-50"/><label for="10-50"> 10-50 people</label><br/>
-                        <input type="radio" name ="numOfEmployee" id="50-200"/><label for="50-200"> 50-200 people</label><br/>
-                        <input type="radio" name ="numOfEmployee" id="more"/><label for="more"> More than 200 people</label>
+                        <input type="radio" name ="numOfEmployee" id="1-10" required value={numofPeople} onChange={(event)=>setnumofPeople(event.target.value)}/><label for="1-10"> 1-10 people</label><br/>
+                        <input type="radio" name ="numOfEmployee" id="10-50" required value={numofPeople} onChange={(event)=>setnumofPeople(event.target.value)}/><label for="10-50"> 10-50 people</label><br/>
+                        <input type="radio" name ="numOfEmployee" id="50-200" required value={numofPeople} onChange={(event)=>setnumofPeople(event.target.value)}/><label for="50-200"> 50-200 people</label><br/>
+                        <input type="radio" name ="numOfEmployee" id="more" required value={numofPeople} onChange={(event)=>setnumofPeople(event.target.value)}/><label for="more"> More than 200 people</label>
                     <p id="formtext">Select industry:</p>
-                    <select id="select-state" class="textbox" placeholder="Select a category">
+                    <select id="select-state" class="textbox" placeholder="Select a category" required value={industryName} onChange={(event)=>setindustryName(event.target.value)}>
                         <option value="" >Select a state...</option>
                         <option value="1">Advertising & Marketing</option> 
                         <option value="2">Aerospace</option>
@@ -97,7 +100,7 @@ const Fifth =()=>{
                         <option value="52">Utilities</option>
                     </select>
                     <p id="formtext">Where is your company located?</p>
-                    <select id="select-state" class="textbox" placeholder="Select a country">
+                    <select id="select-state" class="textbox" placeholder="Select a country" required value={emirateName} onChange={(event)=>setemirateName(event.target.value)}>
                         <option value="1">Select an Emirate</option>
                         <option value="2">Abu Dhabi</option>
                         <option value="3">Dubai</option>
