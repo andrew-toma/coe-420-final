@@ -43,7 +43,7 @@ const First=()=>{
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-6">
-                    <img id = "startpicture" src={Startpic} class="img-fluid rounded-start" alt="..."/>
+                    <img id = "startpicture" src={Startpic} class="img-fluid rounded-start" alt="startpicture"/>
                 </div>
                 </div>
             </div>

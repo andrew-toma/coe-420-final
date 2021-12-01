@@ -3,7 +3,7 @@ import PersonItem from './PersonItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
 import Axios from "axios";
-import ViewProfile from './ViewProfile';
+
 const Filter =()=>{
     
   const [investorList, setinvestorList] = useState([]);
