@@ -6,9 +6,6 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Axios from "axios";
-
-
-
 const StartUpsSignUp = ()=>{
   const [user, setUser] = useState('');
   const [email, setEmail] = useState("");
@@ -38,15 +35,11 @@ const StartUpsSignUp = ()=>{
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
-
   }
-
   const clearErrors = ()=>{
     setEmailError('');
     setPasswordError('');
-
   }
-
   const handleLogin = ()=>{
   clearErrors();
   fire
@@ -65,7 +58,6 @@ const StartUpsSignUp = ()=>{
       }
     });
   };
-
   const handleSignUp = ()=>{
     clearErrors();
     fire
@@ -83,11 +75,9 @@ const StartUpsSignUp = ()=>{
         }
       });
   };
-
   const handleLogout = () =>{
     fire.auth().signOut();
   };
-
   const authListener = () =>{
     fire.auth().onAuthStateChanged(user =>{
       if(user){
@@ -99,13 +89,17 @@ const StartUpsSignUp = ()=>{
       }
     })
   }
-
   useEffect(()=>{
     authListener();
   })
   return(
 
         <div>
+
+                    {user ? (
+                        <Seventh handleLogout={handleLogout}/>
+                    ):(
+
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                                 <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
@@ -129,16 +123,18 @@ const StartUpsSignUp = ()=>{
                                 <p className="errorMsg">{emailError}</p>
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
-                                <p className="errorMsg">{passwordError}</p>
-                                <button id = "submit" type="button" onClick={addUser} >Sign Up</button>
-
+@@ -140,12 +135,6 @@
                             </form>
 
                     </div>
+            )
+            }
+
+
+
+
         </div>
         )
           }
     
-
-
 export default StartUpsSignUp;

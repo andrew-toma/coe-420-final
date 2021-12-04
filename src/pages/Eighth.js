@@ -11,42 +11,6 @@ import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
 
 const Seventh =({handleLogout})=>{
-        const[hasPosted, setHasPosted] = useState(null);
-        const history = useHistory();
-        const postOrViewBlog = (email) => {
-            Axios.post("http://localhost:3001/hasPosted", {
-                email: email,
-              }).then((response) => {
-                console.log(response.data[0].blog);
-                if(response.data[0].blog != null && response.data[0].blog !=""){
-                    setHasPosted(true);
-                }else{
-                    setHasPosted(false);
-                }
-              });
-        };
-        const userHasPosted = new Promise((resolve, reject) => {      
-            if(hasPosted == true) {  
-                resolve('Promise is resolved successfully.');  
-            } else {    
-                reject('Promise is rejected');  
-            }
-          });
-          const userHasNotPosted = new Promise((resolve, reject) => {      
-            if(hasPosted == false) {  
-                resolve('Promise is resolved successfully.');  
-            } else {    
-                reject('Promise is rejected');  
-            }
-          });
-          useEffect(()=>{
-            userHasPosted.then((message) => {
-                history.push("/viewBlog");
-            });
-            userHasNotPosted.then((message) => {
-                history.push("/FileUpload");
-            });
-          })
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -78,7 +42,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create blog posts to connect with Investors and like-minded Businesses.</h5>
-                                <button id="btnText" type="button" onClick={() => {postOrViewBlog(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);}} class="btn btn-dark">Post Blog</button>
+                                <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
                             </div>
                             </div>
                         </div>

@@ -6,9 +6,6 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Axios from "axios";
-
-
-
 const StartUpsSignUp = ()=>{
   const [user, setUser] = useState('');
   const [email, setEmail] = useState("");
@@ -50,7 +47,6 @@ const StartUpsSignUp = ()=>{
       setinvestorList(response.data);
     });
   };
-
   // const updateInvestor = (id) => {
   //   Axios.put("http://localhost:3001/update", { wage: newWage, id: id }).then(
   //     (response) => {
@@ -71,7 +67,6 @@ const StartUpsSignUp = ()=>{
   //     }
   //   );
   // };
-
   const deleteEmployee = (id) => {
     Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
       setinvestorList(
@@ -81,22 +76,15 @@ const StartUpsSignUp = ()=>{
       );
     });
   };
-
   //USER AUTENTICATION FUNCTIONS
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
-
   }
-
   const clearErrors = ()=>{
     setEmailError('');
     setPasswordError('');
-
   }
-
-
-
   const handleSignUp = ()=>{
     clearErrors();
     fire
@@ -114,11 +102,9 @@ const StartUpsSignUp = ()=>{
         }
       });
   };
-
   const handleLogout = () =>{
     fire.auth().signOut();
   };
-
   const authListener = () =>{
     fire.auth().onAuthStateChanged(user =>{
       if(user){
@@ -131,18 +117,20 @@ const StartUpsSignUp = ()=>{
     })
   }
   const AddandSign = () =>{
-
     addUser();
     handleSignUp();
-
   };
-
   useEffect(()=>{
     authListener();
   })
   return(
 
         <div>
+
+                    {user ? (
+                        <Seventh handleLogout={handleLogout}/>
+                    ):(
+
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                                 <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
@@ -168,18 +156,17 @@ const StartUpsSignUp = ()=>{
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
                                 <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
-
                             </form>
 
                     </div>
-    
-      
-        
+            )
+            }
+
+
+
        
         </div>
         )
           }
     
-
-
 export default StartUpsSignUp;

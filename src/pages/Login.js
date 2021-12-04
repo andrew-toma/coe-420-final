@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
+import Eighth from './Eighth';
 import fire from './fire';
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
@@ -17,7 +18,8 @@ const Login = ()=>{
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
-  const [axiosresponse, setaxiosresponse] = useState(null);
+  const [startUp, setstartUp] = useState(null);
+  const [investor, setInvestor] = useState(null);
   const history = useHistory();
 
   const loginUser = () => {
@@ -26,19 +28,18 @@ const Login = ()=>{
       password: password,
     }).then((response) => {
       console.log(response.data);
-      setaxiosresponse(response);
+      setstartUp(response);
     });
-    if(!axiosresponse){
+    if(!startUp){
       Axios.post("http://localhost:3001/investorslogin", {
         email: email,
         password: password,
       }).then((response) => {
         console.log(response.data);
-        setaxiosresponse(response);
+        setInvestor(response);
 
       });
     }
-
   };
   
   const clearInputs = ()=>{
@@ -68,9 +69,20 @@ const Login = ()=>{
       }
     })
   }
-  const myPromise = new Promise((resolve, reject) => {      
-    if(axiosresponse) {  
-      if(axiosresponse.data.length > 0){
+  const startUpPromise = new Promise((resolve, reject) => {      
+    if(startUp) {  
+      if(startUp.data.length > 0){
+        resolve('Promise is resolved successfully.');  
+      }else{
+        reject('Promise is rejected');  
+      }
+    } else {    
+        reject('Promise is rejected');  
+    }
+  });
+  const investorPromise = new Promise((resolve, reject) => {      
+    if(investor) {  
+      if(investor.data.length > 0){
         resolve('Promise is resolved successfully.');  
       }else{
         reject('Promise is rejected');  
@@ -81,10 +93,16 @@ const Login = ()=>{
   });
   useEffect(()=>{
     authListener();
-    myPromise.then((message) => {
-    console.log( axiosresponse)  ;
+    startUpPromise.then((message) => {
+    console.log( startUp)  ;
+    localStorage.setItem("axiosresponse", JSON.stringify(startUp.data));
     history.push("/Seventh");
     });
+    investorPromise.then((message) => {
+      console.log( investor)  ;
+      localStorage.setItem("axiosresponse", JSON.stringify(investor.data));
+      history.push("/Eighth");
+      });
   })
   return(
 
