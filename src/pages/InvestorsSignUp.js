@@ -6,7 +6,14 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Axios from "axios";
+<<<<<<< HEAD
 const StartUpsSignUp = ()=>{
+=======
+
+
+
+const InvestorsSignUp = ()=>{
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
   const [user, setUser] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +21,7 @@ const StartUpsSignUp = ()=>{
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
   const [companyName, setcompanyName] = useState("");
-  const [NewcompanyName, setNewcompanyName] = useState('');
+  //const [NewcompanyName, setNewcompanyName] = useState('');
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [investorList, setinvestorList] = useState([]);
@@ -126,14 +133,22 @@ const StartUpsSignUp = ()=>{
   return(
 
         <div>
+<<<<<<< HEAD
 
                     {user ? (
                         <Seventh handleLogout={handleLogout}/>
                     ):(
 
+=======
+      
+                    {user ? (
+                        <Seventh handleLogout={handleLogout}/>
+                    ):(
+            
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                                <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
+                            <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
                                 <div class="container-fluid">
                                     <div class="navbar-nav">
                                         <div id = "navcard" class="card mb-2">
@@ -161,12 +176,22 @@ const StartUpsSignUp = ()=>{
                     </div>
             )
             }
+<<<<<<< HEAD
 
 
 
+=======
+    
+      
+        
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
        
         </div>
         )
           }
     
+<<<<<<< HEAD
 export default StartUpsSignUp;
+=======
+export default InvestorsSignUp;
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343

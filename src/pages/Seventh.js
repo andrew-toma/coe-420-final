@@ -10,6 +10,7 @@ import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
 
+
 const Seventh =({handleLogout})=>{
         const[hasPosted, setHasPosted] = useState(null);
         const history = useHistory();
@@ -76,7 +77,7 @@ const Seventh =({handleLogout})=>{
                         <div class="col-md-4">
                             <div class="card h-100">
                             <div class="card-body">
-                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
+                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="PostBlogpic"/>
                                 <h5 id="text" class="card-title">Create blog posts to connect with Investors and like-minded Businesses.</h5>
                                 <button id="btnText" type="button" onClick={() => {postOrViewBlog(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);}} class="btn btn-dark">Post Blog</button>
                             </div>
@@ -85,16 +86,16 @@ const Seventh =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
+                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="FindMatchespic"/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
+                                <Link to="/Filter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
                         </div>
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="Messagepic"/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
                                 <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>

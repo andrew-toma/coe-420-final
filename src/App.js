@@ -2,11 +2,12 @@ import React from 'react';
 import First from "./pages/First";
 import Second from "./pages/Second";
 import StartUpsSignUp from "./pages/StartUpsSignUp";
-import InvestorsSignUp from "./pages/InvestorsSignUp";
+import InvestorsSignUp from "./pages/InvestorsSignUp"
 import Login from "./pages/Login";
 import Fifth from "./pages/Fifth";
 import Sixth from "./pages/Sixth";
 import Seventh from "./pages/Seventh";
+<<<<<<< HEAD
 import Eighth from "./pages/Eighth";
 import FileUpload from "./pages/FileUpload";
 import Message from "./pages/Message";
@@ -15,10 +16,15 @@ import viewBlog from "./pages/viewBlog";
 
 
 
+=======
+import Blogs from './pages/Blogs';
+import Filter from './pages/Filter';
+import Message from './pages/Message';
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Blogs from './pages/Blogs';
+
 
 const App = () =>{
   <h4 className='display-4 text-center mb-4'>
@@ -41,6 +47,7 @@ const App = () =>{
       <Route path="/Seventh" component={Seventh} />
       <Route path="/Eighth" component={Eighth} />
       <Route path="/Blogs" component={Blogs} />
+<<<<<<< HEAD
       <Route path="/FileUpload" component={FileUpload} />
       <Route path="/Message" component={Message} />
       <Route path="/Progress" component={Progress} />
@@ -48,11 +55,15 @@ const App = () =>{
 
 
 
+=======
+      <Route path="/Filter" component={Filter} />
+      <Route path="/Message" component={Message} />
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
     </Switch>
     
-    </div>    
+    </div>
     </Router> 
-  
+    
   );
 }
 

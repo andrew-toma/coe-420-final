@@ -11,7 +11,7 @@ const Second =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
@@ -38,7 +38,7 @@ const Second =()=>{
                         <div class="col-md-3">
                         <div class="card h-100">
                         <div class="card-body">
-                            <img id="investorIMG" src={Investorpic} class="card-img-top" alt="..."/>
+                            <img id="investorIMG" src={Investorpic} class="card-img-top" alt="investorIMG"/>
                             <h5 id="text" class="card-title">Find the perfect verified start-ups for your investments.</h5>
                             <Link to="/InvestorsSignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
                         </div>
@@ -47,7 +47,7 @@ const Second =()=>{
                     <div class="col-md-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <img id="startUpIMG" src={Startuppic} class="card-img-top" alt="..."/>
+                            <img id="startUpIMG" src={Startuppic} class="card-img-top" alt="startUpIMG"/>
                             <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
                             <Link to="/StartUpsSignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
                         </div>

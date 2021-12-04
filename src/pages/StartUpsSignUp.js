@@ -17,6 +17,7 @@ const StartUpsSignUp = ()=>{
   const [NewcompanyName, setNewcompanyName] = useState('');
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
+  const [startupSignupList, setstartupSignupList] = useState([]);
   const displayInfo = ()=>{
     console.log(companyName);
   }
@@ -28,8 +29,24 @@ const StartUpsSignUp = ()=>{
       email: email,
       password: password,
     }).then(() => {
-      console.log("success");
+        setstartupSignupList([
+            ...startupSignupList,
+            {
+              companyName: companyName,
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              password: password,
+            },
+          ]);
     });
+  };
+
+  const AddandSign = () =>{
+  
+    addUser();
+    handleSignUp();
+  
   };
   //USER AUTENTICATION FUNCTIONS
   const clearInputs = ()=>{
@@ -95,14 +112,22 @@ const StartUpsSignUp = ()=>{
   return(
 
         <div>
+<<<<<<< HEAD
 
                     {user ? (
                         <Seventh handleLogout={handleLogout}/>
                     ):(
 
+=======
+      
+                    {user ? (
+                        <Seventh handleLogout={handleLogout}/>
+                    ):(
+            
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                                <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
+                            <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
                                 <div class="container-fluid">
                                     <div class="navbar-nav">
                                         <div id = "navcard" class="card mb-2">
@@ -123,16 +148,29 @@ const StartUpsSignUp = ()=>{
                                 <p className="errorMsg">{emailError}</p>
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
+<<<<<<< HEAD
 @@ -140,12 +135,6 @@
+=======
+                                <p className="errorMsg">{passwordError}</p>
+                                <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
+
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
                             </form>
 
                     </div>
             )
             }
+<<<<<<< HEAD
 
 
 
 
+=======
+    
+      
+        
+       
+>>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
         </div>
         )
           }

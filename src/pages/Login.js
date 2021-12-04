@@ -8,7 +8,6 @@ import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link,useHistory} from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Axios from "axios";
 
 const Login = ()=>{
@@ -114,7 +113,7 @@ const Login = ()=>{
       
             <div>
                       <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                          <span><a href="index.html"><img id = "logo" src="logo.png" alt="logo"/></a></span>
+                          <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
                           <div class="container-fluid">
                               <div class="navbar-nav">
                                   <div id = "navcard" class="card mb-2">
