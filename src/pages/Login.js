@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
 import Eighth from './Eighth';
+<<<<<<< HEAD
 import {fire} from './fire';
+=======
+import fire from './fire';
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import './styles/page3.css';

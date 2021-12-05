@@ -10,7 +10,11 @@ import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
 
+<<<<<<< HEAD
 const Eighth =({handleLogout})=>{
+=======
+const Seventh =({handleLogout})=>{
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -73,4 +77,8 @@ const Eighth =({handleLogout})=>{
 
 }
 
+<<<<<<< HEAD
 export default Eighth;
+=======
+export default Seventh;
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00

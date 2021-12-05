@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
+<<<<<<< HEAD
 import ViewBlog from './viewBlog';
+=======
+import viewBlog from './viewBlog';
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
 import FileUpload from './FileUpload';
 import './styles/page2.css';
 import './styles/Navbar.css';

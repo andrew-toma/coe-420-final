@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
 import React, {useState, useEffect} from 'react';
 import './styles/Navbar.css';
 import './styles/viewBlog.css';
@@ -59,4 +63,9 @@ const ViewBlog = ()=>{
   )
 };
       
+<<<<<<< HEAD
   export default ViewBlog;
+=======
+  export default ViewBlog;
+
+>>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
