@@ -88,7 +88,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="FindMatchespic"/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                                <Link to="/Filter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
+                                <Link to="/InvestorFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
                         </div>

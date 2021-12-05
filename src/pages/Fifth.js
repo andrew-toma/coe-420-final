@@ -9,6 +9,7 @@ const Fifth =()=>{
     const [numofPeople, setnumofPeople] = useState("");
     const [industryName, setindustryName] = useState("");
     const [emirateName, setemirateName] = useState("");
+    const [companyDesc, setcompanyDesc] = useState("");
     function yesnoCheck() {
         
         if (document.getElementById('yesCheck').checked) {
@@ -48,70 +49,30 @@ const Fifth =()=>{
                     <p id="formtext">Select industry:</p>
                     <select id="select-state" class="textbox" placeholder="Select a category" required value={industryName} onChange={(event)=>setindustryName(event.target.value)}>
                         <option value="" >Select a state...</option>
-                        <option value="1">Advertising & Marketing</option> 
-                        <option value="2">Aerospace</option>
-                        <option value="3">Agritech</option>
-                        <option value="4">Apparel & Luxury Goods</option> 
-                        <option value="5">Arttech</option>
-                        <option value="6">Banks</option> 
-                        <option value="7">Biotech & Sciences</option>
-                        <option value="8">Charity</option>
-                        <option value="9">Chemicals</option> 
-                        <option value="10">Cleantech</option>
-                        <option value="11">Communication Services</option>
-                        <option value="12">Communications Equipments</option>
-                        <option value="13">Construction</option>
-                        <option value="14">Consumer Services</option>
-                        <option value="15">Cosmetics</option>
-                        <option value="16">Deeptech</option>
-                        <option value="17">Edtech</option>
-                        <option value="18">Electrical Equipment</option>
-                        <option value="19">Electronics</option> 
-                        <option value="20">Energy</option>
-                        <option value="21">Environmental facilities and survices</option>
-                        <option value="23">FMCG</option>
-                        <option value="24">Fashion</option>
-                        <option value="25">Finetech</option>
-                        <option value="26">Gaming</option> 
-                        <option value="27">Hardware & Storage</option>
-                        <option value="28">Healthtech</option>
-                        <option value="29">Hospitality & Leisure</option>
-                        <option value="30">Human Resources</option>
-                        <option value="31">IT Services & Software</option>
-                        <option value="32">Insuretech</option>
-                        <option value="33">Legaltech</option>
-                        <option value="34">Leisure Products</option>
-                        <option value="35">Machinery</option>
-                        <option value="36">Manufacturing</option>
-                        <option value="37">Marine</option>
-                        <option value="38">Medtech</option>
-                        <option value="40">Mobilitytech</option>
-                        <option value="41">Office Survices & Supplies</option>
-                        <option value="42">Pharmacueticals</option>
-                        <option value="43">Real Estate</option>
-                        <option value="44">Regtech</option>
-                        <option value="45">Research and Consulting Survices</option>
-                        <option value="46">Retailtech</option>
-                        <option value="47">Safety & Security</option>
-                        <option value="48">Socialtech</option>
-                        <option value="49">Spacetech</option>
-                        <option value="50">Trading Companies & Distributers</option>
-                        <option value="51">Transportation</option>
-                        <option value="52">Utilities</option>
+                        <option value="1">Transportation</option>
+                        <option value="2">Advertising & Marketing</option> 
+                        <option value="3">Aerospace</option>
+                        <option value="4">Apparel & Luxury Goods</option>
+                        <option value="5">Electronics</option> 
+                        <option value="6">Fashion</option>
+                        <option value="7">Gaming</option> 
+                        <option value="8">Healthtech</option>
+                        <option value="9">IT Services & Software</option>
+                        <option value="10">Real Estate</option>
                     </select>
                     <p id="formtext">Where is your company located?</p>
                     <select id="select-state" class="textbox" placeholder="Select a country" required value={emirateName} onChange={(event)=>setemirateName(event.target.value)}>
-                        <option value="1">Select an Emirate</option>
-                        <option value="2">Abu Dhabi</option>
-                        <option value="3">Dubai</option>
-                        <option value="4">Sharjah</option>
-                        <option value="5">Ajman</option>
-                        <option value="6">Umm Al Quwain</option>
-                        <option value="7">Ras Al Khaimah</option>
-                        <option value="7">Fujairah</option>
+                        <option value="">Select an Emirate</option>
+                        <option value="1">Abu Dhabi</option>
+                        <option value="2">Dubai</option>
+                        <option value="3">Sharjah</option>
+                        <option value="4">Ajman</option>
+                        <option value="5">Umm Al Quwain</option>
+                        <option value="6">Ras Al Khaimah</option>
+                        <option value="9">Fujairah</option>
                     </select>
                     <p id="formtext">Write a short Description of what  your company does</p>
-                    <textarea class="textbox" Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description"></textarea><br/>
+                    <textarea class="textbox" Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description" required value={companyDesc} onChange={(event)=>setcompanyDesc(event.target.value)}></textarea><br/>
                     <button id = "Create" type="button">Create Profile</button>
                     <button id = "Cancel" type="button">Cancel</button>
                 </form>
