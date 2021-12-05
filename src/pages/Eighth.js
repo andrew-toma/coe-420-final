@@ -73,8 +73,4 @@ const Eighth =({handleLogout})=>{
 
 }
 
-<<<<<<< HEAD
 export default Eighth;
-=======
-export default Eighth;
->>>>>>> 70e9b0df33ce701047fd26d56f0850340dee1229
