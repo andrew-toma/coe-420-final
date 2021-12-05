@@ -142,8 +142,4 @@ const FileUpload = () => {
   );
 };
 
-<<<<<<< HEAD
 export default FileUpload;
-=======
-export default FileUpload;
->>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00

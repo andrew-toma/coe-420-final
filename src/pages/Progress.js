@@ -19,8 +19,4 @@ Progress.propTypes = {
   percentage: PropTypes.number.isRequired
 };
 
-<<<<<<< HEAD
 export default Progress;
-=======
-export default Progress;
->>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
