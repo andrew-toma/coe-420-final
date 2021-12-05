@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
-import fire from './fire';
+import {fire} from './fire';
 import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,6 @@ const InvestorsSignUp = ()=>{
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
   const [companyName, setcompanyName] = useState("");
-  //const [NewcompanyName, setNewcompanyName] = useState('');
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [investorList, setinvestorList] = useState([]);

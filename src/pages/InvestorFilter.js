@@ -3,23 +3,25 @@ import PersonItem from './PersonItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
 import Axios from "axios";
+import {View} from './View';
 
-const Filter =()=>{
+const InvestorFilter =()=>{
     
-  const [startupList, setStartUpList] = useState([]);
+  const [investorList, setinvestorList] = useState([]);
   const[searchTerm,setSearchTerm] = useState("");
   const[order, setOrder] = useState("ASC");
+    
   const getEmployees = () => {
-    Axios.get("http://localhost:3001/startups").then((response) => 
+    Axios.get("http://localhost:3001/investors").then((response) => 
     {
-      setStartUpList(response.data);
+      setinvestorList(response.data);
     });
   };
   
   const sortArray = (col)=>{
-    console.log(startupList);
+    console.log(investorList);
     if(order =="ASC"){
-      startupList.sort((a, b) => {
+      investorList.sort((a, b) => {
         if (a[col].toLowerCase() < b[col].toLowerCase()) {
           return 1
         }
@@ -31,7 +33,7 @@ const Filter =()=>{
       setOrder("DSC");
     }
     if(order == "DSC"){
-      startupList.sort((a, b) => {
+      investorList.sort((a, b) => {
         if (a[col].toLowerCase() > b[col].toLowerCase()) {
           return 1
         }
@@ -81,7 +83,7 @@ const Filter =()=>{
                   onChange={(event) => {setSearchTerm(event.target.value)}}
                 >
                   <option >Select Industry</option>
-                  {startupList.map((val,key)=>(
+                  {investorList.map((val,key)=>(
                     
                     <option value={val.industry} key={key}>
                       {val.industry}
@@ -99,7 +101,7 @@ const Filter =()=>{
                   onChange={(event) => {setSearchTerm(event.target.value)}}
                 >
                   <option >Select Emirate</option>
-                  {startupList.map((val,key)=>(
+                  {investorList.map((val,key)=>(
                     
                     <option value={val.emirate} key={key}>
                       {val.emirate}
@@ -115,7 +117,7 @@ const Filter =()=>{
           
           <div className="col-sm-9">
             <div className="row mt-5">
-              {startupList.filter((val)=>{
+              {investorList.filter((val)=>{
                 if(searchTerm == ""){
                     return val
                 }
@@ -136,7 +138,6 @@ const Filter =()=>{
                   
                   return (
                       <PersonItem val={val} key={key} />
-                      
                     );
                     
                   })
@@ -149,4 +150,4 @@ const Filter =()=>{
     );
 }
 
-export default Filter;
+export default InvestorFilter;

@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from 'react';
 import './styles/Navbar.css';
 import './styles/viewBlog.css';

@@ -51,7 +51,7 @@ const Eighth =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
-                                <Link to="/Filter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
+                                <Link to="/StartUpFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
                         </div>
@@ -73,4 +73,8 @@ const Eighth =({handleLogout})=>{
 
 }
 
+<<<<<<< HEAD
 export default Eighth;
+=======
+export default Eighth;
+>>>>>>> 70e9b0df33ce701047fd26d56f0850340dee1229

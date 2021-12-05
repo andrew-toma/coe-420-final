@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
 import Eighth from './Eighth';
-import fire from './fire';
+import {fire} from './fire';
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import './styles/page3.css';

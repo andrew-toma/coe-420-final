@@ -13,7 +13,8 @@ import Message from "./pages/Message";
 import Progress from "./pages/Progress";
 import viewBlog from "./pages/viewBlog";
 import Blogs from './pages/Blogs';
-import Filter from './pages/Filter';
+import StartUpFilter from './pages/StartUpFilter';
+import InvestorFilter from'./pages/InvestorFilter';
 
 
 
@@ -46,8 +47,8 @@ const App = () =>{
       <Route path="/Message" component={Message} />
       <Route path="/Progress" component={Progress} />
       <Route path="/viewBlog" component={viewBlog} />
-      <Route path="/Filter" component={Filter} />
-
+      <Route path="/StartUpFilter" component={StartUpFilter} />
+      <Route path="/InvestorFilter" component={InvestorFilter} />
     </Switch>
     
     </div>
