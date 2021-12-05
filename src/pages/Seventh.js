@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ViewBlog from './viewBlog';
 import FileUpload from './FileUpload';
+import Fifth from './Fifth'
 import './styles/page2.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -63,7 +64,7 @@ const Seventh =({handleLogout})=>{
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     <button id = "about" type="button">About</button>
                                     <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
-                                    <Link to="/"><button id = "signUp" type="button"> {/*here I should get the user account name from database and display it, then onclick a dropdown will appear with the function to edit profile and go to the settings */}</button></Link> 
+                                    <Link to="/Fifth"><button id = "signUp" type="button"> Edit Profile</button></Link> 
                                 </div>
                             </div>
                         </div>

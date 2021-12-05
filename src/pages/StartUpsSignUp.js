@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
-import Fifth from './Fifth'
+
 import {fire} from './fire';
 import './styles/page3.css';
 import './styles/Navbar.css';
@@ -114,10 +114,10 @@ const StartUpsSignUp = ()=>{
 
         <div>
 
-                    {/* {user ? (
-                          <Fifth />
-                        // <Seventh handleLogout={handleLogout}/>
-                    ):( */}
+                    {user ? (
+                         
+                        <Seventh handleLogout={handleLogout}/>
+                    ):(
 
 
                     <div>
@@ -144,13 +144,13 @@ const StartUpsSignUp = ()=>{
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
-                                <Link to="/Fifth"><button id = "submit" type="button" onClick={AddandSign} >Sign Up</button></Link>
+                                <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
 
                             </form>
 
                     </div>
             )
-            {/* } */}
+            } 
         </div>
         )
           }

@@ -10,7 +10,7 @@ const Fifth =()=>{
     const [numofPeople, setnumofPeople] = useState("");
     const [industryName, setindustryName] = useState("");
     const [emirateName, setemirateName] = useState("");
-    const [companyDesc, setcompanyDesc] = useState("");
+    const [companyDesc, setcompanyDesc] = useState(null);
     const [startupList, setStartUpList] = useState([]);
     function yesnoCheck() {
         
@@ -22,6 +22,7 @@ const Fifth =()=>{
             document.getElementById('ifYes').style.display = 'none';
        }
     }
+  
     const getEmployees = () => {
         Axios.get("http://localhost:3001/startups").then((response) => 
         {
@@ -30,7 +31,7 @@ const Fifth =()=>{
       };
 
     const updateStartup = (email) => {
-          Axios.put("http://localhost:3001/createprofile", { companyWebsite: companyWebsite, numofPeople: numofPeople, industryName:industryName, emirateName:emirateName, email:email }).then(
+          Axios.put("http://localhost:3001/createprofile", { companyWebsite: companyWebsite, numofPeople: numofPeople, industryName:industryName, emirateName:emirateName, companyDesc:companyDesc, email:email }).then(
                 (response) => {
                     console.log(response);
                   }
@@ -50,7 +51,6 @@ const Fifth =()=>{
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
                                 <p id = "navbartext" style = {{color:'black'}}>Welcome to your profile</p>
-                                {/* <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> */}
                             </div>
                         </div>
                     </div>
@@ -95,8 +95,8 @@ const Fifth =()=>{
                     </select>
                     <p id="formtext">Write a short Description of what  your company does</p>
                     <textarea class="textbox" Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description" required value={companyDesc} onChange={(event)=>setcompanyDesc(event.target.value)}></textarea><br/>
-                    <Link to ="/Seventh"><button id = "Create" type="button" onClick={UpdateStartup}>Create Profile</button></Link>
-                    <button id = "Cancel" type="button">Cancel</button>
+                    <Link to ="/Seventh"><button id = "Create" type="button" onClick={UpdateStartup}>Update Profile</button></Link>
+                    <Link to ="/Seventh"><button id = "Cancel" type="button">Cancel</button></Link>
                 </form>
                 
             </div>
