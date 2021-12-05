@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import ViewBlog from './viewBlog';
+import viewBlog from './viewBlog';
 import FileUpload from './FileUpload';
 import './styles/page2.css';
 import './styles/Navbar.css';
@@ -10,44 +10,7 @@ import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
 
-
-const Seventh =({handleLogout})=>{
-        const[hasPosted, setHasPosted] = useState(null);
-        const history = useHistory();
-        const postOrViewBlog = (email) => {
-            Axios.post("http://localhost:3001/hasPosted", {
-                email: email,
-              }).then((response) => {
-                console.log(response.data[0].blog);
-                if(response.data[0].blog != null && response.data[0].blog !=""){
-                    setHasPosted(true);
-                }else{
-                    setHasPosted(false);
-                }
-              });
-        };
-        const userHasPosted = new Promise((resolve, reject) => {      
-            if(hasPosted == true) {  
-                resolve('Promise is resolved successfully.');  
-            } else {    
-                reject('Promise is rejected');  
-            }
-          });
-          const userHasNotPosted = new Promise((resolve, reject) => {      
-            if(hasPosted == false) {  
-                resolve('Promise is resolved successfully.');  
-            } else {    
-                reject('Promise is rejected');  
-            }
-          });
-          useEffect(()=>{
-            userHasPosted.then((message) => {
-                history.push("/viewBlog");
-            });
-            userHasNotPosted.then((message) => {
-                history.push("/FileUpload");
-            });
-          })
+const Eighth =({handleLogout})=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -77,16 +40,16 @@ const Seventh =({handleLogout})=>{
                         <div class="col-md-4">
                             <div class="card h-100">
                             <div class="card-body">
-                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="PostBlogpic"/>
+                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create blog posts to connect with Investors and like-minded Businesses.</h5>
-                                <button id="btnText" type="button" onClick={() => {postOrViewBlog(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);}} class="btn btn-dark">Post Blog</button>
+                                <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
                             </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="FindMatchespic"/>
+                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
                                 <Link to="/Filter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
@@ -95,7 +58,7 @@ const Seventh =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="Messagepic"/>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
                                 <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
@@ -110,4 +73,4 @@ const Seventh =({handleLogout})=>{
 
 }
 
-export default Seventh;
+export default Eighth;

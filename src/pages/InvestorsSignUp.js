@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
-import fire from './fire';
+import {fire} from './fire';
 import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Axios from "axios";
-
-
 
 const InvestorsSignUp = ()=>{
   const [user, setUser] = useState('');
@@ -50,7 +48,6 @@ const InvestorsSignUp = ()=>{
       setinvestorList(response.data);
     });
   };
-
   // const updateInvestor = (id) => {
   //   Axios.put("http://localhost:3001/update", { wage: newWage, id: id }).then(
   //     (response) => {
@@ -71,7 +68,6 @@ const InvestorsSignUp = ()=>{
   //     }
   //   );
   // };
-
   const deleteEmployee = (id) => {
     Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
       setinvestorList(
@@ -81,22 +77,15 @@ const InvestorsSignUp = ()=>{
       );
     });
   };
-
   //USER AUTENTICATION FUNCTIONS
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
-
   }
-
   const clearErrors = ()=>{
     setEmailError('');
     setPasswordError('');
-
   }
-
-
-
   const handleSignUp = ()=>{
     clearErrors();
     fire
@@ -114,11 +103,9 @@ const InvestorsSignUp = ()=>{
         }
       });
   };
-
   const handleLogout = () =>{
     fire.auth().signOut();
   };
-
   const authListener = () =>{
     fire.auth().onAuthStateChanged(user =>{
       if(user){
@@ -131,23 +118,19 @@ const InvestorsSignUp = ()=>{
     })
   }
   const AddandSign = () =>{
-
     addUser();
     handleSignUp();
-
   };
-
   useEffect(()=>{
     authListener();
   })
   return(
 
         <div>
-      
+
                     {user ? (
                         <Seventh handleLogout={handleLogout}/>
                     ):(
-            
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                             <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
@@ -173,18 +156,15 @@ const InvestorsSignUp = ()=>{
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
                                 <p className="errorMsg">{passwordError}</p>
                                 <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
-
                             </form>
 
                     </div>
             )
             }
-    
-      
-        
        
         </div>
         )
           }
     
+
 export default InvestorsSignUp;

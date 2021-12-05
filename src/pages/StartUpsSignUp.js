@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
-import fire from './fire';
+import {fire} from './fire';
 import './styles/page3.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import Axios from "axios";
-
-
-
 const StartUpsSignUp = ()=>{
   const [user, setUser] = useState('');
   const [email, setEmail] = useState("");
@@ -55,15 +52,11 @@ const StartUpsSignUp = ()=>{
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
-
   }
-
   const clearErrors = ()=>{
     setEmailError('');
     setPasswordError('');
-
   }
-
   const handleLogin = ()=>{
   clearErrors();
   fire
@@ -82,7 +75,6 @@ const StartUpsSignUp = ()=>{
       }
     });
   };
-
   const handleSignUp = ()=>{
     clearErrors();
     fire
@@ -100,11 +92,9 @@ const StartUpsSignUp = ()=>{
         }
       });
   };
-
   const handleLogout = () =>{
     fire.auth().signOut();
   };
-
   const authListener = () =>{
     fire.auth().onAuthStateChanged(user =>{
       if(user){
@@ -116,18 +106,18 @@ const StartUpsSignUp = ()=>{
       }
     })
   }
-
   useEffect(()=>{
     authListener();
   })
   return(
 
         <div>
-      
+
                     {user ? (
                         <Seventh handleLogout={handleLogout}/>
                     ):(
-            
+
+
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                             <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
@@ -159,14 +149,8 @@ const StartUpsSignUp = ()=>{
                     </div>
             )
             }
-    
-      
-        
-       
         </div>
         )
           }
     
-
-
 export default StartUpsSignUp;

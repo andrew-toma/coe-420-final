@@ -9,6 +9,7 @@ background-color:White;
  .navbar-custom .navbar-text {
  color: white;
  }
+
  .container-fluid{
  background-color:transparent;
  width:100%;
@@ -19,6 +20,10 @@ background-color:White;
   float:right;
   width:100%;
  }
+ /* #navbartext {
+  color: white;
+  font-size: 15px;
+  } */
  #navcard{
  float:right;
  background-color:transparent;
@@ -39,6 +44,24 @@ background-color:White;
  width:100%;
 
  }
+ .app-container {
+   display: flex;
+   flex-direction: column;
+ }
+ .subtitle{
+
+  font-size: 25px;
+  text-align: left;
+}
+.card-text{
+
+  font-size: 15px;
+
+}
+.card-title{
+font-size:30px;
+
+}
  #row2{
  background-color:transparent;
  width:100%;

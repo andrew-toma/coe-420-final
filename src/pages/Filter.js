@@ -3,12 +3,14 @@ import PersonItem from './PersonItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
 import Axios from "axios";
+import {View} from './View';
 
 const Filter =()=>{
     
   const [investorList, setinvestorList] = useState([]);
   const[searchTerm,setSearchTerm] = useState("");
   const[order, setOrder] = useState("ASC");
+    
   const getEmployees = () => {
     Axios.get("http://localhost:3001/investors").then((response) => 
     {
@@ -129,6 +131,9 @@ const Filter =()=>{
                   return val
                 }
                 else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val
+                }
+                else if(val.emirate.toLowerCase().includes(searchTerm.toLowerCase())){
                   return val
                 }
                 })

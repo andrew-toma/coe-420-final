@@ -1,0 +1,25 @@
+@charset "UTF-8";
+#uploadbtn {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  margin-left: 42%;
+  margin-top: 40px;
+}
+#container {
+  height: 70%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#description {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}

@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
-import './styles/page1.css';
+
 import './styles/Navbar.css';
+import './styles/page1.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Startpic from '../photos/start.png';
 import {Link} from "react-router-dom";
