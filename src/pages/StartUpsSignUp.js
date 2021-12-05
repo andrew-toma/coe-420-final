@@ -112,19 +112,12 @@ const StartUpsSignUp = ()=>{
   return(
 
         <div>
-<<<<<<< HEAD
 
                     {user ? (
                         <Seventh handleLogout={handleLogout}/>
                     ):(
 
-=======
-      
-                    {user ? (
-                        <Seventh handleLogout={handleLogout}/>
-                    ):(
-            
->>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
+
                     <div>
                             <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
                             <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
@@ -148,29 +141,14 @@ const StartUpsSignUp = ()=>{
                                 <p className="errorMsg">{emailError}</p>
                                 <p id="formtext">What is your password?</p>
                                 <input class="input textbox"type="password" placeholder="Password" required value={password} onChange={(event)=>setPassword(event.target.value)}/>
-<<<<<<< HEAD
-@@ -140,12 +135,6 @@
-=======
                                 <p className="errorMsg">{passwordError}</p>
                                 <button id = "submit" type="button" onClick={AddandSign} >Sign Up</button>
 
->>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
                             </form>
 
                     </div>
             )
             }
-<<<<<<< HEAD
-
-
-
-
-=======
-    
-      
-        
-       
->>>>>>> 0ff2b501dad9cb2cca37e0c924c978c4f9cdc343
         </div>
         )
           }
