@@ -14,13 +14,10 @@ import Progress from "./pages/Progress";
 import viewBlog from "./pages/viewBlog";
 import Blogs from './pages/Blogs';
 import Filter from './pages/Filter';
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 

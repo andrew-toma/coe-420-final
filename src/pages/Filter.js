@@ -130,18 +130,9 @@ const Filter =()=>{
                 else if(val.lastName.toLowerCase().includes(searchTerm.toLowerCase())){
                   return val
                 }
-<<<<<<< HEAD
-                else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val
-                }
-                else if(val.emirate.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val
-                }
-=======
                 //else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
                 //  return val
                 //}
->>>>>>> 25fc581a5241e5658a574590baf225aa2763ed00
                 })
                 .map((val,key) => {
                   
