@@ -15,7 +15,6 @@ const InvestorsSignUp = ()=>{
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('');
   const [companyName, setcompanyName] = useState("");
-  //const [NewcompanyName, setNewcompanyName] = useState('');
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [investorList, setinvestorList] = useState([]);

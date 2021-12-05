@@ -5,7 +5,7 @@ import './styles/Navbar.css';
 import Axios from "axios";
 import {View} from './View';
 
-const StartUpFilter =()=>{
+const InvestorFilter =()=>{
     
   const [investorList, setinvestorList] = useState([]);
   const[searchTerm,setSearchTerm] = useState("");
@@ -150,4 +150,4 @@ const StartUpFilter =()=>{
     );
 }
 
-export default StartUpFilter;
+export default InvestorFilter;
