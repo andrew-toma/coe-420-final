@@ -11,6 +11,8 @@ const ViewProfile = ()=>{
         if(gotUser == false){
           console.log(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
           setGotUser(true);
+          console.log(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)
+          console.log(JSON.parse(localStorage.getItem("axiosresponse"))[0].companyName)
         }
       })
 
@@ -22,6 +24,10 @@ const ViewProfile = ()=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <p id = "navbartext" style = {{color:'black',fontSize:'15px'}}>Welcome to your profile</p>
+                            <p>{JSON.parse(localStorage.getItem("axiosresponse"))[0].email}</p>
+                            <p>{JSON.parse(localStorage.getItem("axiosresponse"))[0].companyName}</p>
+                            <p>{JSON.parse(localStorage.getItem("axiosresponse"))[0].companyName}</p>
+                            <p>{JSON.parse(localStorage.getItem("axiosresponse"))[0].companyName}</p>
                         </div>
                     </div>
                 </div>
