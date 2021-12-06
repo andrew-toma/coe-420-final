@@ -1,141 +1,159 @@
 @charset "UTF-8";
 body {
-background-color:White;
- }
+  background-color: White;
+}
 .navbar-custom {
- background-color: #C4C4C4;
- }
- .navbar-custom .navbar-brand,
- .navbar-custom .navbar-text {
- color: white;
- }
+  background-color: #c4c4c4;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: white;
+}
 
- .container-fluid{
- background-color:transparent;
- width:100%;
- float:right;
- }
- .navbar-nav{
-  background-color:transparent;
-  float:right;
-  width:100%;
- }
- /* #navbartext {
+.container-fluid {
+  background-color: transparent;
+  width: 100%;
+  float: right;
+}
+.navbar-nav {
+  background-color: transparent;
+  float: right;
+  width: 100%;
+}
+/* #navbartext {
   color: white;
   font-size: 15px;
   } */
- #navcard{
- float:right;
- background-color:transparent;
- height:40px;
- border:0px;
- width:100%;
- }
- #bodycard{
- float:left;
- background-color:transparent;
- height:40px;
- border:0px;
- width:100%;
- }
- .row{
- float:right;
- background-color:transparent;
- width:100%;
-
- }
- .app-container {
-   display: flex;
-   flex-direction: column;
- }
- .subtitle{
-
+#navcard {
+  float: right;
+  background-color: transparent;
+  height: 40px;
+  border: 0px;
+  width: 100%;
+}
+#bodycard {
+  float: left;
+  background-color: transparent;
+  height: 40px;
+  border: 0px;
+  width: 100%;
+}
+.row {
+  float: right;
+  background-color: transparent;
+  width: 100%;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+.subtitle {
   font-size: 25px;
   text-align: left;
 }
-.card-text{
-
+.card-text {
   font-size: 15px;
-
 }
-.card-title{
-font-size:30px;
-
+.card-title {
+  font-size: 30px;
 }
- #row2{
- background-color:transparent;
- width:100%;
- }
- #logo{
- height: 50px;
- margin-left:20px;
- }
- #signUp{
- height:40px;
- width:100px;
- font-Size:medium;
- font-weight: bold;
- color:White;
- background-color: #FF9E2D;
- border-radius: 3px;
- border: 0px;
- font-family:Verdana, sans-serif;
- }
- #sort{
-    height:50px;
-    width:200px;
-    font-Size:15px;
-    font-weight: bold;
-    color:White;
-    background-color: #FF9E2D;
-    border-radius: 3px;
-    border: 0px;
-    font-family:Verdana, sans-serif;
-    }
- #login{
- height:40px;
- width:100px;
- font-Size:medium;
- font-weight: bold;
- color:black;
- background-color:transparent;
- border-radius: 0px;
- border: 0px;
- font-family:Verdana, sans-serif;
- border-left: 1px solid black;
- 
- }
- #about{
- height:40px;
- width:100px;
- font-Size:medium;
- font-weight: normal;
- color:black;
- background-color:transparent;
- border-radius: 3px;
- border: 0px;
- font-family:Verdana, sans-serif;
- }
- #startUps{
- height:40px;
- width:100px;
- font-Size:medium;
- font-weight: normal;
- color:black;
- background-color:transparent;
- border-radius: 3px;
- border: 0px;
- font-family:Verdana, sans-serif;
- }
-  #investors{
- height:40px;
- width:100px;
- font-Size:medium;
- font-weight: normal;
- color:black;
- background-color:transparent;
- border-radius: 3px;
- border: 0px;
- font-family:Verdana, sans-serif;
- margin-left:15px;
- }
+#row2 {
+  background-color: transparent;
+  width: 100%;
+}
+#logo {
+  height: 50px;
+  margin-left: 20px;
+}
+.logo {
+  border-color: white;
+}
+#account {
+  height: 40px;
+  width: 40px;
+  color: white;
+  background-image: linear-gradient(#f0446f, #ff9e2d);
+  border-radius: 20px;
+  border-color: black;
+  font-family: Verdana, sans-serif;
+  margin-left: 10px;
+}
+#accText {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#signUp {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#sort {
+  height: 50px;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#login {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  border-left: 1px solid black;
+}
+#about {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#startUps {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#investors {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  margin-left: 15px;
+}

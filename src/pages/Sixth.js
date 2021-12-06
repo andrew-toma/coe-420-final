@@ -20,11 +20,11 @@ const Sixth =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                    <span><img id = "logo" class='img' src="logo.png" alt="logo"/></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
-                                <p id = "navbartext" style = {{color:'black'}}><strong>Welcome to your profile</strong></p>
+                                <p id = "navbartext" style = {{color:'black',fontSize:'15px'}}>Welcome to your profile</p>
                             </div>
                         </div>
                     </div>

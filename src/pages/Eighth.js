@@ -8,25 +8,26 @@ import PostBlogpic from '../photos/PostBlog.png';
 import FindMatchespic from '../photos/FindMatches.png';
 import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
+import { FaRegUser} from "react-icons/fa";
 import Axios from "axios";
 
 const Eighth =({handleLogout})=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                <span><img id = "logo" class = 'img' src="logo.png" alt="logo"/></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-5">
+                                <div class="col-md-10">
                                 </div>
-                                <div class="col-md-6">
-                                    <button id = "investors" type="button">Investors</button>
+                                <div class="col-md-2">
+                                    {/*<button id = "investors" type="button">Investors</button>
                                     <button id = "startUps" type="button">Start-Ups</button>
-                                    <button id = "about" type="button">About</button>
-                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
-                                    <Link to="/"><button id = "signUp" type="button"> {/*here I should get the user account name from database and display it, then onclick a dropdown will appear with the function to edit profile and go to the settings */}</button></Link> 
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link>*/}
+                                    <button id = "accText" type="button">Account</button>
+                                    <Link to="/Sixth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
                                 </div>
                             </div>
                         </div>
@@ -40,8 +41,8 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                             <div class="card h-100">
                             <div class="card-body">
-                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
-                                <h5 id="text" class="card-title">Create blog posts to connect with Investors and like-minded Businesses.</h5>
+                                <img id="investorIMG" src={PostBlogpic} class="card-img-top img" alt="..."/>
+                                <h5 id="text" class="card-title">View blog posts to connect with Start-Ups and like-minded Businesses.</h5>
                                 <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
                             </div>
                             </div>
@@ -49,8 +50,8 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
-                                <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
+                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top img" alt="..."/>
+                                <h5 id="text" class="card-title">Expand your horizen. Revolutionize how you discover and track verified startups.</h5>
                                 <Link to="/StartUpFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>
@@ -58,8 +59,8 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
-                                <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top img" alt="..."/>
+                                <h5 id="text" class="card-title">Stay Connected and build trust. Add contacts to your chat and stay in touch.</h5>
                                 <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
                         </div>

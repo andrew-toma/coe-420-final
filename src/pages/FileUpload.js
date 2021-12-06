@@ -81,7 +81,7 @@ const FileUpload = () => {
   return (
     <div>
           <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-            <span><img id = "logo" src="logo.png" alt="logo"/></span>
+            <span><img class = 'img' id = "logo" src="logo.png" alt="logo"/></span>
             <div class="container-fluid">
             <div class="navbar-nav">
                 <div id = "navcard" class="card mb-2">
@@ -133,7 +133,7 @@ const FileUpload = () => {
           <div className='row mt-5'>
             <div className='col-md-6 m-auto'>
               <h3 className='text-center'>{uploadedFile.fileName}</h3>
-              <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+              <img class='img' style={{ width: '100%', border:'0px;' }} src={uploadedFile.filePath} alt='' />
             </div>
           </div>
         ) : null}

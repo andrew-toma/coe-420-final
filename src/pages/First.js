@@ -3,7 +3,6 @@ import React, {useState} from "react";
 
 import './styles/Navbar.css';
 import './styles/page1.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Startpic from '../photos/start.png';
 import {Link} from "react-router-dom";
 
@@ -13,7 +12,7 @@ const First=()=>{
            
         <div>
           <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-          <Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link>
+          <Link to="/"><img id = "logo" class='img' src="logo.png" alt="logo"/></Link>
             <div class="container-fluid">
             <div class="navbar-nav">
                 <div id = "navcard" class="card mb-2">
@@ -35,7 +34,7 @@ const First=()=>{
             <div id = "bodycard" class="card mb-2">
                 <div id = "row2" class="row g-0">
                 <div class="col-md-5">
-                    <div class="card-body">
+                    <div id = 'mottoCard' class="card-body">
                     <h5 id = "motto" class="card-title">Build yourself a great story</h5>
                     <p id = "mottodesc" class="card-text">Suits Up helps start-ups and investors to build trust and grow big together.</p>
                     <Link to="/Second"><button id = "getStarted" >Get Started</button></Link>
@@ -44,7 +43,7 @@ const First=()=>{
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-6">
-                    <img id = "startpicture" src={Startpic} class="img-fluid rounded-start" alt="startpicture"/>
+                    <img id = "startpicture" src={Startpic} class='img' alt="startpicture"/>
                 </div>
                 </div>
             </div>
