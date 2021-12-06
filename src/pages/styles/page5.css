@@ -24,3 +24,7 @@
   float: right;
   margin-top: 20px;
 }
+.container {
+  background-image: linear-gradient(to right, rgb(240, 68, 111), #ff9e2d);
+  width: 100%;
+}

@@ -10,6 +10,7 @@ import FindMatchespic from '../photos/FindMatches.png';
 import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
+import { FaRegUser} from "react-icons/fa";
 
 
 const Seventh =({handleLogout})=>{
@@ -57,14 +58,12 @@ const Seventh =({handleLogout})=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-5">
+                                <div class="col-md-9">
                                 </div>
-                                <div class="col-md-6">
-                                    <button id = "investors" type="button">Investors</button>
-                                    <button id = "startUps" type="button">Start-Ups</button>
-                                    <button id = "about" type="button">About</button>
-                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link> 
-                                    <Link to="/Fifth"><button id = "signUp" type="button"> Edit Profile</button></Link> 
+                                <div class="col-md-3">
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout} style={{marginRight:'8px'}}>Logout</button></Link> 
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +97,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="Messagepic"/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
-                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
+                                <Link to="/Message"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
                         </div>
                         </div>

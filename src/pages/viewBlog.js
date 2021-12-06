@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './styles/Navbar.css';
 import './styles/viewBlog.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { FaRegUser} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import Axios from "axios";
 
@@ -31,28 +31,30 @@ const ViewBlog = ()=>{
   };
     return (
     <div>
-           <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-            <span><img id = "logo" src="logo.png" alt="logo"/></span>
-            <div class="container-fluid">
-            <div class="navbar-nav">
-                <div id = "navcard" class="card mb-2">
-                <div class="row g-0">
-                    <div class="col-md-6">
-                    </div>
-                    <div class="col-md-6">
-                    <button id = "investors" type="button">Investors</button>
-                    <button id = "startUps" type="button">Start-Ups</button>
-                    <button id = "about" type="button">About</button>
-                    <Link to="/Login"><button id = "login" type="button">Log In</button></Link>
-                    <Link to="/Second"><button id = "signUp" type="button">Sign Up</button></Link>
+                <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+                <span><Link to="/Seventh"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
+                <div class="container-fluid">
+                    <div class="navbar-nav">
+                        <div id = "navcard" class="card mb-2">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                </div>
+                                <div class="col-md-4">
+                                    {/*<button id = "investors" type="button">Investors</button>
+                                    <button id = "startUps" type="button">Start-Ups</button>
+                                    */}
+                                    <Link to="/FileUpload"><button id = "delete" type="button" >Delete</button></Link>
+                                    <Link to="/FileUpload"><button id = "update" type="button" >Update</button></Link>
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            </div>
-          </nav>
+                </nav> 
     <div id='imageView'>
-       <img id='img' src = {getPicture(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)} alt="preview image" />
+       <img class = 'img' id='img' src = {getPicture(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)} alt="preview image" />
        <h1 id = 'blogText'>{getPictureDescription(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)}</h1>
     </div>
     </div>
@@ -60,4 +62,3 @@ const ViewBlog = ()=>{
 };
       
   export default ViewBlog;
-

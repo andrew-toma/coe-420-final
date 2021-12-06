@@ -9,12 +9,14 @@
 }
 #text{
 	font-family:Verdana, sans-serif;
-	
+	font-size:20px;
+	text-align:center;
 }
 #btnText
 {
 	font-weight: bold;
 	font-family:Verdana, sans-serif;
+	border-radius: 20px;
 
 }
 .card-body{
@@ -35,8 +37,12 @@
 #investorIMG{
 	height:300px;
 	width:300px;
+	border-color:transparent;
+ 	border-radius: 0px;
 }
 #startUpIMG{
 	height:300px;
 	width:300px;
+	border-color:transparent;
+	border-radius: 0px;
 }

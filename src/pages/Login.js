@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Seventh from './Seventh';
-import Eighth from './Eighth';
-import {fire} from './fire';
+import {fire, auth} from './fire';
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import './styles/page3.css';
@@ -9,6 +8,9 @@ import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
+import firebase from 'firebase/compat/app';
+
+
 
 const Login = ()=>{
   const [user, setUser] = useState('');
@@ -41,6 +43,10 @@ const Login = ()=>{
     }
   };
   
+  const signInWithGoogle = () =>{
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
   const clearInputs = ()=>{
     setEmail('');
     setPassword('');
@@ -55,6 +61,7 @@ const Login = ()=>{
 
   const handleLogout = () =>{
     fire.auth().signOut();
+    auth.signOut();
   };
 
   const authListener = () =>{
@@ -136,7 +143,9 @@ const Login = ()=>{
                         <input class="input"type="password" placeholder="Password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                       </div>
                       <p className="errorMsg">{passwordError}</p>
-                      <button id = "submit" type="button"  onClick={loginUser}>Login</button>
+                      <button id = "submit" type="button"  onClick={loginUser} style={{marginRight:'20px'}}>Login</button>
+                      <button id = "edit2" type="button"  onClick={signInWithGoogle}>Sign in with Google</button>
+                      
                       </form>
 
             </div>

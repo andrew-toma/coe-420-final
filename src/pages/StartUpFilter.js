@@ -1,16 +1,24 @@
 import React, {useState} from 'react';
-import PersonItem from './PersonItem';
+import PersonItem from './StartupItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
 import Axios from "axios";
-import {View} from './View';
+import StartupItem from './StartupItem';
+import { FaRegUser} from "react-icons/fa";
+import{Link} from "react-router-dom";
+import {fire, auth} from './fire';
+
 
 const StartUpFilter =()=>{
     
   const [startupList, setStartUpList] = useState([]);
   const[searchTerm,setSearchTerm] = useState("");
   const[order, setOrder] = useState("ASC");
-    
+  
+  const handleLogout = () =>{
+    fire.auth().signOut();
+    auth.signOut();
+  };
   const getEmployees = () => {
     Axios.get("http://localhost:3001/startups").then((response) => 
     {
@@ -48,6 +56,25 @@ const StartUpFilter =()=>{
   }
   
     return(
+      <div>
+              <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+                <span><img id = "logo" class = 'img' src="logo.png" alt="logo"/></span>
+                <div class="container-fluid">
+                    <div class="navbar-nav">
+                        <div id = "navcard" class="card mb-2">
+                            <div class="row g-0">
+                                <div class="col-md-9">
+                                </div>
+                                <div class="col-md-3">
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout} style={{marginRight:'8px'}}>Logout</button></Link> 
+                                    <Link to="/Sixth"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/Sixth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </nav>
       <div className="container">
         <div className="row">
           <div className="col-sm-3">
@@ -124,20 +151,14 @@ const StartUpFilter =()=>{
                 else if(val.companyName.toLowerCase().includes(searchTerm.toLowerCase())){
                     return val
                 }
-                else if(val.firstName.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val
+                else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
+                 return val
                 }
-                else if(val.lastName.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val
-                }
-                //else if(val.industry.toLowerCase().includes(searchTerm.toLowerCase())){
-                //  return val
-                //}
                 })
                 .map((val,key) => {
                   
                   return (
-                      <PersonItem val={val} key={key} />
+                      <StartupItem val={val} key={key} />
                     );
                     
                   })
@@ -146,6 +167,7 @@ const StartUpFilter =()=>{
           </div>
           
         </div>
+      </div>
       </div>
     );
 }

@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import 'firebase/compat/analytics';
 
 
  // Your web app's Firebase configuration
@@ -19,6 +20,7 @@ import 'firebase/compat/firestore';
 
   const db= fire.firestore();
   const auth=firebase.auth();
-//   firebase.analytics();
+  const analytics = firebase.analytics();
 
-  export {fire,db,auth,firebase};
+
+  export {fire,db,auth, analytics};

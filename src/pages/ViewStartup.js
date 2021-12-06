@@ -50,7 +50,7 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 
-export const View = ({val, showModal, setShowModal }) => {
+export const ViewStartup = ({val, showModal, setShowModal }) => {
   
   const modalRef = useRef();
   
@@ -98,6 +98,7 @@ export const View = ({val, showModal, setShowModal }) => {
                   <p><strong>Email:</strong> {val.email}</p>
                   <p><strong>Industry:</strong> {val.industry}</p>
                   <p><strong>Emirate:</strong> {val.emirate}</p>
+                  <p>Around {val.numofPeople}</p>
                   <Link to ="/Message"><button id = "sort" type="button">Contact</button></Link>
                 </ModalContent>
                 <CloseModalButton

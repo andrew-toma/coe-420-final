@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import {View} from './View';
+import {ViewInvestor} from './ViewInvestor';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import './styles/Navbar.css';
 
-const PersonItem = ({ val }) => {
+const InvestorItem = ({ val }) => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -14,19 +14,18 @@ const PersonItem = ({ val }) => {
   return (
     <div className="col-sm-4">
       <div className="card my-2">
-        <img src={val.blogs} className="card-img-top" alt="" />
+        <img id="cardimg" src={val.blogs} className="card-img-top" alt="" />
         <div className="card-body">
           <h5 className="card-title">
           <strong>{val.companyName}</strong>
           </h5>
-          <p className="subtitle"><strong>Industry:</strong><p className="card-text">{val.industry}</p></p>
-          <p className="subtitle"><strong>Emirate:</strong> <p className="card-text">{val.emirate}</p></p>     
+          <p className="subtitle"><strong>Name:</strong><p className="card-text">{val.firstName} {val.lastName}</p></p>    
           <button id = "sort" type="button" onClick={openModal}>View Profile</button>
-          <View val={val} showModal={showModal} setShowModal={setShowModal}/>
+          <ViewInvestor val={val} showModal={showModal} setShowModal={setShowModal}/>
         </div>
       </div>
     </div>
   );
 };
 
-export default PersonItem;
+export default InvestorItem;

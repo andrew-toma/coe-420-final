@@ -3,6 +3,8 @@
  width :70%;
  height:100%;
  margin-left:90px;
+ border-color:transparent;
+ border-radius: 0px;
  }
  #motto{
  font-weight:bold;
@@ -19,15 +21,15 @@
  }
  #getStarted{
  height:50px;
- width:150px;
- font-Size:medium;
+ width:300px;
+ font-Size:30px;
  font-weight: bold;
  color:White;
  background-color: #FF9E2D;
- border-radius: 3px;
+ border-radius: 25px;
  border: 0px;
  font-family:Verdana, sans-serif;
- margin-left:40px;
+ margin-left:120px;
  margin-top:10px;
  
  }
