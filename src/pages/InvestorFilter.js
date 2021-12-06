@@ -6,7 +6,7 @@ import { FaRegUser} from "react-icons/fa";
 import Axios from "axios";
 import{Link,useHistory} from "react-router-dom";
 import {fire, auth} from './fire';
-import { Modal } from './Modal';
+
 
 const InvestorFilter =()=>{
   const [showModal, setShowModal] = useState(false);
