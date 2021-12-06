@@ -15,7 +15,7 @@ import viewBlog from "./pages/viewBlog";
 import Blogs from './pages/Blogs';
 import StartUpFilter from './pages/StartUpFilter';
 import InvestorFilter from'./pages/InvestorFilter';
-
+import viewProfile from'./pages/viewProfile';
 
 
 
@@ -47,6 +47,7 @@ const App = () =>{
       <Route path="/Message" component={Message} />
       <Route path="/Progress" component={Progress} />
       <Route path="/viewBlog" component={viewBlog} />
+      <Route path="/viewProfile" component={viewProfile} />
       <Route path="/StartUpFilter" component={StartUpFilter} />
       <Route path="/InvestorFilter" component={InvestorFilter} />
     </Switch>
