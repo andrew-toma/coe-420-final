@@ -32,7 +32,7 @@ const ViewBlog = ()=>{
     return (
     <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" class = 'img' src="logo.png" alt="logo"/></span>
+                <span><Link to="/Seventh"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
@@ -45,7 +45,7 @@ const ViewBlog = ()=>{
                                     */}
                                     <Link to="/FileUpload"><button id = "delete" type="button" >Delete</button></Link>
                                     <Link to="/FileUpload"><button id = "update" type="button" >Update</button></Link>
-                                    <button id = "accText" type="button">Account</button>
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
                                     <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
                                 </div>
                             </div>

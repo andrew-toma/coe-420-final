@@ -3,6 +3,7 @@ import './styles/page3.css';
 import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
 
 const Sixth =()=>{
     const [companyWebsite, setcompanyWebsite] = useState("");
@@ -20,7 +21,7 @@ const Sixth =()=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><img id = "logo" class='img' src="logo.png" alt="logo"/></span>
+                    <span><Link to="/Eigth"><img id = "logo" class='img' src="logo.png" alt="logo"/></Link></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">

@@ -53,7 +53,7 @@ const Seventh =({handleLogout})=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" class = 'img' src="logo.png" alt="logo"/></span>
+                <span><Link to="/"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
@@ -64,7 +64,7 @@ const Seventh =({handleLogout})=>{
                                     {/*<button id = "investors" type="button">Investors</button>
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link>*/}
-                                    <button id = "accText" type="button">Account</button>
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
                                     <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
                                 </div>
                             </div>

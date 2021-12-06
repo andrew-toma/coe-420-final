@@ -46,7 +46,7 @@ const Fifth =()=>{
         return(
             <div >
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><img id = "logo" class='img' src="logo.png" alt="logo"/></span>
+                    <span><Link to="/Seventh"><img id = "logo" class='img' src="logo.png" alt="logo"/></Link></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
