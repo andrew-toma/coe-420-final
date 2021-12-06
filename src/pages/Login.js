@@ -102,11 +102,13 @@ const Login = ()=>{
     startUpPromise.then((message) => {
     console.log( startUp)  ;
     localStorage.setItem("axiosresponse", JSON.stringify(startUp.data));
+    localStorage.setItem("startup", JSON.stringify(startUp.data));//ON LOGOUT SET STARTUP TO NULL INSIDE LOCAL STORAGE SO LOGOUT FUNCTION WORK PROPWRLY
     history.push("/Seventh");
     });
     investorPromise.then((message) => {
       console.log( investor)  ;
       localStorage.setItem("axiosresponse", JSON.stringify(investor.data));
+      localStorage.setItem("investor", JSON.stringify(investor.data));//ON LOGOUT SET INVESTOR TO NULL INSIDE LOCAL STORAGE SO LOGOUT FUNCTION WORK PROPWRLY
       history.push("/Eighth");
       });
   })
