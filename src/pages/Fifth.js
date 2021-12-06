@@ -5,6 +5,7 @@ import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
+import { FaRegUser} from "react-icons/fa";
 const Fifth =()=>{
     const [companyWebsite, setcompanyWebsite] = useState("");
     const [numofPeople, setnumofPeople] = useState("");
@@ -28,21 +29,22 @@ const Fifth =()=>{
         {
           setStartUpList(response.data);
         });
-      };
+    };
 
     const updateStartup = (email) => {
-          Axios.put("http://localhost:3001/createprofile", { companyWebsite: companyWebsite, numofPeople: numofPeople, industryName:industryName, emirateName:emirateName, companyDesc:companyDesc, email:email }).then(
+          Axios.put("http://localhost:3001/editstartupprofile", { companyWebsite: companyWebsite, numofPeople: numofPeople, industryName:industryName, emirateName:emirateName, companyDesc:companyDesc, email:email }).then(
                 (response) => {
                     console.log(response);
                   }
             
           );
           console.log(startupList);
-        };
-        const UpdateStartup = () =>{
+    };
+    const UpdateStartup = () =>{
             getEmployees();
             updateStartup(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
-          };
+    };
+
         return(
             <div >
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -50,7 +52,14 @@ const Fifth =()=>{
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
-                                <p id = "navbartext" style = {{color:'black',fontSize:'15px'}}>Welcome to your profile</p>
+                                <div class="row g-0">
+                                <div class="col-md-8">
+                                    </div>
+                                    <div class="col-md-4"> 
+                                        <p id = "navbartext" style = {{color:'black'}}>Welcome to your profile<Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link></p>
+                                          
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

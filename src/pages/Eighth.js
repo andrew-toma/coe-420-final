@@ -8,8 +8,8 @@ import PostBlogpic from '../photos/PostBlog.png';
 import FindMatchespic from '../photos/FindMatches.png';
 import Messagepic from '../photos/Message.png';
 import {Link,useHistory} from "react-router-dom";
-import { FaRegUser} from "react-icons/fa";
 import Axios from "axios";
+import { FaRegUser} from "react-icons/fa";
 
 const Eighth =({handleLogout})=>{
         return(
@@ -20,14 +20,12 @@ const Eighth =({handleLogout})=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-10">
+                                <div class="col-md-9">
                                 </div>
-                                <div class="col-md-2">
-                                    {/*<button id = "investors" type="button">Investors</button>
-                                    <button id = "startUps" type="button">Start-Ups</button>
-                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link>*/}
+                                <div class="col-md-3">
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout} style={{marginRight:'8px'}}>Logout</button></Link> 
                                     <Link to="/Sixth"><button id = "accText" type="button">Account</button></Link>
-                                    <Link to="/Sixth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                    <Link to="/Sixth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link>  
                                 </div>
                             </div>
                         </div>
@@ -41,8 +39,8 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                             <div class="card h-100">
                             <div class="card-body">
-                                <img id="investorIMG" src={PostBlogpic} class="card-img-top img" alt="..."/>
-                                <h5 id="text" class="card-title">View blog posts to connect with Start-Ups and like-minded Businesses.</h5>
+                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
+                                <h5 id="text" class="card-title">View blog posts to connect with Investors and like-minded Businesses.</h5>
                                 <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
                             </div>
                             </div>
@@ -59,9 +57,9 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={Messagepic} class="card-img-top img" alt="..."/>
-                                <h5 id="text" class="card-title">Stay Connected and build trust. Add contacts to your chat and stay in touch.</h5>
-                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
+                                <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
+                                <Link to="/Message"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
                         </div>
                         </div>

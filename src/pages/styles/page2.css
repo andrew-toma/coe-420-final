@@ -1,48 +1,48 @@
-@charset "UTF-8";
-#header {
-  font-size: 30px;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 100px;
-  font-family: Verdana, sans-serif;
+@charset "UTF-8"; 
+#header{
+	font-size:30px;
+	text-align:center;
+	font-weight: bold;
+	margin-top:100px;
+	font-family:Verdana, sans-serif;
+
 }
-#text {
-  font-family: Verdana, sans-serif;
-  font-weight: normal;
-  color: black;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: none;
-  font-size: 20px;
+#text{
+	font-family:Verdana, sans-serif;
+	font-size:20px;
+	text-align:center;
 }
-#btnText {
-  font-weight: bold;
-  font-family: Verdana, sans-serif;
+#btnText
+{
+	font-weight: bold;
+	font-family:Verdana, sans-serif;
+	border-radius: 20px;
+
 }
-.card-body {
-  background-color: transparent;
-  border: 3px solid #ff9e2d;
+.card-body{
+	background-color:transparent;
+	border: 3px solid #FF9E2D;
 }
-.card-title {
-  text-align: center;
-  height: 100px;
-  width: 300px;
+.card-title{
+	Text-align:center;
 }
-.btn {
-  margin-left: 22%;
-  width: 150px;
-  height: 60px;
-  border-radius: 10px;
-  font-size: 25px;
-  margin-top: 30px;
-  background-color: black;
+.btn{
+	margin-left:22%;
+	width:150px;
+	height:60px;
+	border-radius:10px;
+	font-size:25px;
+	margin-top:30px;
 }
-#investorIMG {
-  height: 300px;
-  width: 300px;
+#investorIMG{
+	height:300px;
+	width:300px;
+	border-color:transparent;
+ 	border-radius: 0px;
 }
-#startUpIMG {
-  height: 300px;
-  width: 300px;
+#startUpIMG{
+	height:300px;
+	width:300px;
+	border-color:transparent;
+	border-radius: 0px;
 }

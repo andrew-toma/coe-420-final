@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { db, auth } from './fire';
-import {firebase} from './fire';
+import firebase from 'firebase/compat/app';
 import { Input, Button } from '@material-ui/core';
-import './styles/message.css';
 
-const SendMessage=({ scroll })=> {
+function SendMessage({ scroll }) {
     const [msg, setMsg] = useState('')
 
     async function sendMessage(e) {
         e.preventDefault()
-        const {uid, photoURL} = auth.currentUser;
+        const { uid, photoURL } = auth.currentUser
 
         await db.collection('messages').add({
             text: msg,
@@ -33,3 +32,5 @@ const SendMessage=({ scroll })=> {
 }
 
 export default SendMessage;
+
+  

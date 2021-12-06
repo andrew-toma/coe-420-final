@@ -13,6 +13,7 @@ import { FaRegUser} from "react-icons/fa";
 import Axios from "axios";
 
 
+
 const Seventh =({handleLogout})=>{
         const[hasPosted, setHasPosted] = useState(null);
         const history = useHistory();
@@ -58,14 +59,12 @@ const Seventh =({handleLogout})=>{
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-10">
+                                <div class="col-md-9">
                                 </div>
-                                <div class="col-md-2">
-                                    {/*<button id = "investors" type="button">Investors</button>
-                                    <button id = "startUps" type="button">Start-Ups</button>
-                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout}>Logout</button></Link>*/}
+                                <div class="col-md-3">
+                                    <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout} style={{marginRight:'8px'}}>Logout</button></Link> 
                                     <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
-                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +98,7 @@ const Seventh =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="startUpIMG" src={Messagepic} class="card-img-top img" alt="Messagepic"/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
-                                <Link to="/"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
+                                <Link to="/Message"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>
                         </div>
                         </div>

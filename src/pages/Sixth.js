@@ -3,11 +3,14 @@ import './styles/page3.css';
 import './styles/page5.css';
 import './styles/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Axios from "axios";
 import {Link} from "react-router-dom";
+import { FaRegUser} from "react-icons/fa";
 
 const Sixth =()=>{
     const [companyWebsite, setcompanyWebsite] = useState("");
     const [phoneNumber, setphoneNumber] = useState("");
+    const [investorList, setinvestorList] = useState([]);
     function yesnoCheck() {
         
         if (document.getElementById('yesCheck').checked) {
@@ -18,6 +21,26 @@ const Sixth =()=>{
             document.getElementById('ifYes').style.display = 'none';
        }
     }
+    const getEmployees = () => {
+        Axios.get("http://localhost:3001/startups").then((response) => 
+        {
+          setinvestorList(response.data);
+        });
+    };
+
+    const updateInvestor = (email) => {
+          Axios.put("http://localhost:3001/editinvestorprofile", { companyWebsite: companyWebsite, phoneNumber: phoneNumber, email:email }).then(
+                (response) => {
+                    console.log(response);
+                  }
+            
+          );
+          console.log(investorList);
+    };
+    const UpdateInvestor = () =>{
+            getEmployees();
+            updateInvestor(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
+    };
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -25,7 +48,14 @@ const Sixth =()=>{
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
-                                <p id = "navbartext" style = {{color:'black',fontSize:'15px'}}>Welcome to your profile</p>
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    </div>
+                                    <div class="col-md-4"> 
+                                        <p id = "navbartext" style = {{color:'black'}}>Welcome to your profile<Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link></p>
+                                          
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -42,8 +72,8 @@ const Sixth =()=>{
                     </div>
                     <p id="formtext">Enter your phone number:</p>
                     <input class="input textbox"type="text" placeholder="+ --- --- --- ----" required value={phoneNumber} onChange={(event)=>setphoneNumber(event.target.value)}/>
-                    <button id = "Create" type="button">Create Profile</button>
-                    <button id = "Cancel" type="button">Cancel</button>
+                    <Link to ="/Eighth"><button id = "Create" type="button" onClick={UpdateInvestor}>Update Profile</button></Link>
+                    <Link to ="/Eighth"><button id = "Cancel" type="button">Cancel</button></Link>
                     </web>
                 </form>
 
