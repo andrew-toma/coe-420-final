@@ -78,6 +78,25 @@ body {
   font-family: Verdana, sans-serif;
   margin-left: 10px;
 }
+#update {
+  background-color: transparent;
+  border: black;
+  border-right: 1px solid black;
+  color: black;
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+#delete {
+  background-color: transparent;
+  border: black;
+  color: black;
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
 #accText {
   height: 40px;
   width: 100px;
