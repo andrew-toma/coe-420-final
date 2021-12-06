@@ -20,9 +20,9 @@ const First=()=>{
                     <div class="col-md-6">
                     </div>
                     <div class="col-md-6">
-                    <button id = "investors" type="button">Investors</button>
-                    <button id = "startUps" type="button">Start-Ups</button>
-                    <button id = "about" type="button">About</button>
+                    <Link to="/InvestorsNav"><button id = "investors" type="button">Investors</button></Link>
+                    <Link to="/StartupsNav"><button id = "startUps" type="button">Start-Ups</button></Link>
+                    <Link to="/AboutUs"><button id = "about" type="button">About</button></Link>
                     <Link to="/Login"><button id = "login" type="button">Log In</button></Link>
                     <Link to="/Second"><button id = "signUp" type="button">Sign Up</button></Link>
                     </div>

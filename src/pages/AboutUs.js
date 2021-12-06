@@ -1,17 +1,17 @@
-import React from "react";
-
-import './styles/page2.css';
-import './styles/Navbar.css';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Investorpic from '../photos/investor.png';
+import {Link} from "react-router-dom";
+import './styles/Navbar.css';
+import './styles/page1.css';
+import './styles/page2.css';
 import Startuppic from '../photos/start-up.png';
-import{Link} from "react-router-dom";
-const Second =()=>{
-
-        return(
+import Investorpic from '../photos/investor.png';
+const AboutUs = () => {
+    
+        return (
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <Link to="/"><img id = "logo" class='img' src="logo.png" alt="logo"/></Link>
+                <span><Link to="/"><img id = "logo" src="logo.png" alt="logo"/></Link></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
@@ -29,8 +29,10 @@ const Second =()=>{
                         </div>
                     </div>
                 </div>
-                </nav> 
-                <h3 id="header" class="mb-5">How would you like to join?</h3>
+                </nav>
+
+                <h1 id="header1">About Us</h1>
+                <h3 id="header2" class="mb-5">Making it accessible, easy, efficient and fun</h3>
                 <div id = "navcard" class="card mb-2">
                  <div class="row g-0">
                     <div class="col-md-3">
@@ -39,7 +41,7 @@ const Second =()=>{
                         <div class="card h-100">
                         <div class="card-body">
                             <img id="investorIMG" src={Investorpic} class="card-img-top img" alt="investorIMG"/>
-                            <h5 id="text" class="card-title">Find the perfect verified start-ups for your investments</h5>
+                            <h5 id="text" class="card-title">We help you find the perfect investments</h5>
                             <Link to="/InvestorsSignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
                         </div>
                         </div>
@@ -48,7 +50,7 @@ const Second =()=>{
                     <div class="card h-100">
                         <div class="card-body">
                             <img id="startUpIMG" src={Startuppic} class="card-img-top img" alt="startUpIMG"/>
-                            <h5 id="text" class="card-title">Create your company profile and start your journey</h5>
+                            <h5 id="text" class="card-title">We help you match with the perfect investors</h5>
                             <Link to="/StartUpsSignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
                         </div>
                         </div>
@@ -57,10 +59,9 @@ const Second =()=>{
                     </div>
                  </div>
                 </div>
-            </div>
-
+            </div> 
         )
-
+   
 }
+export default AboutUs;
 
-export default Second;
