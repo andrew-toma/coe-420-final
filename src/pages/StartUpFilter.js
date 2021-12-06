@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import PersonItem from './StartupItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Navbar.css';
+import { FaRegUser} from "react-icons/fa";
+import {Link,useHistory} from "react-router-dom";
 import Axios from "axios";
 import StartupItem from './StartupItem';
-import { FaRegUser} from "react-icons/fa";
-import{Link} from "react-router-dom";
 import {fire, auth} from './fire';
 
 

@@ -15,7 +15,7 @@ const Eighth =({handleLogout})=>{
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                <span><Link to="/"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
@@ -48,8 +48,8 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top" alt="..."/>
-                                <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
+                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top img" alt="..."/>
+                                <h5 id="text" class="card-title">Expand your horizen. Revolutionize how you discover and track verified startups.</h5>
                                 <Link to="/StartUpFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>

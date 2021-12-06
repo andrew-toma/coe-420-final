@@ -30,12 +30,12 @@ background-color:White;
   font-family: Verdana, sans-serif;
 }
 .navbar-custom {
- background-color: #C4C4C4;
- }
- .navbar-custom .navbar-brand,
- .navbar-custom .navbar-text {
- color: white;
- }
+  background-color: #c4c4c4;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: white;
+}
 
  .container-fluid{
  background-color:transparent;
@@ -79,14 +79,130 @@ background-color:White;
   font-size: 25px;
   text-align: left;
 }
-.card-text{
-
+.card-text {
   font-size: 15px;
-
 }
-.card-title{
-font-size:30px;
-
+.card-title {
+  font-size: 30px;
+}
+#row2 {
+  background-color: transparent;
+  width: 100%;
+}
+#logo {
+  height: 50px;
+  margin-left: 20px;
+}
+.logo {
+  border-color: white;
+}
+#account {
+  height: 40px;
+  width: 40px;
+  color: white;
+  background-image: linear-gradient(#f0446f, #ff9e2d);
+  border-radius: 20px;
+  border-color: black;
+  font-family: Verdana, sans-serif;
+  margin-left: 10px;
+}
+#update {
+  background-color: transparent;
+  border: black;
+  border-right: 1px solid black;
+  color: black;
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+#delete {
+  background-color: transparent;
+  border: black;
+  color: black;
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+#accText {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#signUp {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#sort {
+  height: 50px;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#login {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  border-left: 1px solid black;
+}
+#about {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#startUps {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+}
+#investors {
+  height: 40px;
+  width: 100px;
+  font-size: medium;
+  font-weight: normal;
+  color: black;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  margin-left: 15px;
 }
  #row2{
  background-color:transparent;

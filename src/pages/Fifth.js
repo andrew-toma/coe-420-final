@@ -46,9 +46,9 @@ const Fifth =()=>{
     };
 
         return(
-            <div>
+            <div >
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-                    <span><img id = "logo" src="logo.png" alt="logo"/></span>
+                    <span><Link to="/Seventh"><img id = "logo" class='img' src="logo.png" alt="logo"/></Link></span>
                     <div class="container-fluid">
                         <div class="navbar-nav">
                             <div id = "navcard" class="card mb-2">
@@ -102,7 +102,7 @@ const Fifth =()=>{
                         <option value="Ras Al Khaimah">Ras Al Khaimah</option>
                         <option value="Fujairah">Fujairah</option>
                     </select>
-                    <p id="formtext">Write a short Description of what  your company does</p>
+                    <p id="formtext">Write a short description of what  your company does</p>
                     <textarea class="textbox" Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description" required value={companyDesc} onChange={(event)=>setcompanyDesc(event.target.value)}></textarea><br/>
                     <Link to ="/Seventh"><button id = "Create" type="button" onClick={UpdateStartup}>Update Profile</button></Link>
                     <Link to ="/Seventh"><button id = "Cancel" type="button">Cancel</button></Link>

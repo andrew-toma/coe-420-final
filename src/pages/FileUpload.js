@@ -3,6 +3,7 @@ import Message from './Message';
 import Progress from './Progress';
 import Axios from 'axios';
 import {Link,useHistory} from "react-router-dom";
+import { FaRegUser} from "react-icons/fa";
 import './styles/FileUpload.css';
 import './styles/Navbar.css';
 
@@ -80,26 +81,26 @@ const FileUpload = () => {
 
   return (
     <div>
-          <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-            <span><img id = "logo" src="logo.png" alt="logo"/></span>
-            <div class="container-fluid">
-            <div class="navbar-nav">
-                <div id = "navcard" class="card mb-2">
-                <div class="row g-0">
-                    <div class="col-md-6">
-                    </div>
-                    <div class="col-md-6">
-                    <button id = "investors" type="button">Investors</button>
-                    <button id = "startUps" type="button">Start-Ups</button>
-                    <button id = "about" type="button">About</button>
-                    <Link to="/Login"><button id = "login" type="button">Log In</button></Link>
-                    <Link to="/Second"><button id = "signUp" type="button">Sign Up</button></Link>
+                <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+                <span><Link to="/Seventh"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
+                <div class="container-fluid">
+                    <div class="navbar-nav">
+                        <div id = "navcard" class="card mb-2">
+                            <div class="row g-0">
+                                <div class="col-md-10">
+                                </div>
+                                <div class="col-md-2">
+                                    {/*<button id = "investors" type="button">Investors</button>
+                                    <button id = "startUps" type="button">Start-Ups</button>
+                                    */}
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            </div>
-            </nav>
+                </nav>
       <div id = 'container'>
         {message ? <Message msg={message} /> : null}
         <form onSubmit={onSubmit}>
@@ -133,7 +134,7 @@ const FileUpload = () => {
           <div className='row mt-5'>
             <div className='col-md-6 m-auto'>
               <h3 className='text-center'>{uploadedFile.fileName}</h3>
-              <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+              <img class='img' style={{ width: '100%', border:'0px;' }} src={uploadedFile.filePath} alt='' />
             </div>
           </div>
         ) : null}
