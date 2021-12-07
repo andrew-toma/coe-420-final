@@ -39,6 +39,13 @@ const Fifth =()=>{
             
           );
           console.log(startupList);
+          Axios.post("http://localhost:3001/startupslogin", {
+            email: JSON.parse(localStorage.getItem("axiosresponse"))[0].email,
+            password: JSON.parse(localStorage.getItem("axiosresponse"))[0].password,
+          }).then((response) => {
+            console.log(response.data);
+            localStorage.setItem("axiosresponse", JSON.stringify(response.data));
+          });
     };
     const UpdateStartup = () =>{
             getEmployees();
