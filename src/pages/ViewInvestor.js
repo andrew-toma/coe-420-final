@@ -5,6 +5,7 @@ import { MdClose } from 'react-icons/md';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import './styles/Navbar.css';
+import AvatarPic from '../photos/avatar.jpg';
 
 const ModalWrapper = styled.div`
   width: 800px;
@@ -91,7 +92,7 @@ export const ViewInvestor = ({val, showModal, setShowModal }) => {
           {showModal ? (
             <animated.div style={animation}>
               <ModalWrapper showModal={showModal}>
-                {/* <ModalImg src={require('./modal.jpg')} alt='camera' /> */}
+                <ModalImg src={AvatarPic} alt='AvatarPic' />
                 <ModalContent >
                   <h2>{val.companyName}</h2>
                   <h1 class="subtitle">{val.firstName} {val.lastName}</h1>

@@ -4,9 +4,11 @@ background-color:White;
  }
 
 #cardimg{
-
+  height:200px;
+  width: 200px;
   border-color:transparent;
   border-radius: 0px;
+  
 }
 #account {
   height: 40px;
