@@ -1,33 +1,73 @@
 import React, {useState, useEffect} from 'react';
 import './styles/Navbar.css';
+import './styles/viewBlog.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaRegUser} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import Axios from "axios";
+import StartupItem from './StartupItem';
+import {fire, auth} from './fire';
 
 const Blogs = ()=>{
-  const [image, setImage] = useState(null);
-  const[axiosresponse, setaxiosresponse] = useState(null);
-  const[gotUser, setGotUser] = useState(false);
+    const [startupList, setStartUpList] = useState([]);
+    const [picturePath, setPicturePath] = useState("");
+    const [PictureDescription, setPictureDescription] = useState("");
+    const getEmployees = () => {
+      Axios.get("http://localhost:3001/startups").then((response) => 
+      {
+        setStartUpList(response.data);
+      });
+    };
+    const getPicture = (email) => {
+        Axios.post("http://localhost:3001/hasPosted", {
+            email: email,
+          }).then((response) => {
+            console.log(response.data[0].blog);
+            setPicturePath("/uploads/"+response.data[0].blog);
+          });
+          return (picturePath) ;
 
-  useEffect(()=>{
-    if(gotUser == false){
-      setaxiosresponse(JSON.parse(localStorage.getItem("axiosresponse")));
-      console.log(JSON.parse(localStorage.getItem("axiosresponse")));
-      setGotUser(true);
-    }
-  })
-  const onImageChange = (event) => {
-   if (event.target.files && event.target.files[0]) {
-     setImage(URL.createObjectURL(event.target.files[0]));
-   }
-  }
-  
-  return (
+    };
+    const getPictureDescription = (email) => {
+      Axios.post("http://localhost:3001/getPictureDescription", {
+          email: email,
+        }).then((response) => {
+          console.log(response.data[0].blogText);
+          setPictureDescription(response.data[0].blogText);
+        });
+        return (PictureDescription) ;
+
+  };
+    return (
     <div>
-      <input type="file" onChange={onImageChange} className="filetype" />
-      <img src={image} alt="preview image" />
+                <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+                <span><Link to="/Seventh"><img id = "logo" class = 'img' src="logo.png" alt="logo"/></Link></span>
+                <div class="container-fluid">
+                    <div class="navbar-nav">
+                        <div id = "navcard" class="card mb-2">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                </div>
+                                <div class="col-md-4">
+                                    {/*<button id = "investors" type="button">Investors</button>
+                                    <button id = "startUps" type="button">Start-Ups</button>
+                                    */}
+                                    <Link to="/FileUpload"><button id = "delete" type="button" >Delete</button></Link>
+                                    <Link to="/FileUpload"><button id = "update" type="button" >Update</button></Link>
+                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </nav> 
+    <div id='imageView'>
+       <img class = 'img' id='img' src = {getPicture(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)} alt="preview image" />
+       <h1 id = 'blogText'>{getPictureDescription(JSON.parse(localStorage.getItem("axiosresponse"))[0].email)}</h1>    
+    </div> 
     </div>
   )
-  }
+};
       
   export default Blogs;

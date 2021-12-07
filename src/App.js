@@ -19,6 +19,12 @@ import StartupsNav from './pages/StartupsNav';
 import InvestorsNav from './pages/InvestorsNav';
 import AboutUs from './pages/AboutUs';
 import viewProfile from'./pages/viewProfile';
+import Form from'./pages/Form';
+import ViewForm from'./pages/ViewForm';
+import viewStartUpProfile from'./pages/viewStartUpProfile';
+
+
+
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -55,6 +61,9 @@ const App = () =>{
       <Route path="/viewProfile" component={viewProfile} />
       <Route path="/StartUpFilter" component={StartUpFilter} />
       <Route path="/InvestorFilter" component={InvestorFilter} />
+      <Route path="/Form" component={Form} />
+      <Route path="/ViewForm" component={ViewForm} />
+
     </Switch>
     
     </div>
