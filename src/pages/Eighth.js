@@ -39,7 +39,7 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                             <div class="card h-100">
                             <div class="card-body">
-                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="..."/>
+                                <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="ViewBlogpic"/>
                                 <h5 id="text" class="card-title">View blog posts to connect with Investors and like-minded Businesses.</h5>
                                 <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
                             </div>
@@ -48,7 +48,7 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top img" alt="..."/>
+                                <img id="startUpIMG" src={FindMatchespic} class="card-img-top img" alt="FindMatchespic"/>
                                 <h5 id="text" class="card-title">Expand your horizen. Revolutionize how you discover and track verified startups.</h5>
                                 <Link to="/StartUpFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
@@ -57,7 +57,7 @@ const Eighth =({handleLogout})=>{
                         <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="..."/>
+                                <img id="startUpIMG" src={Messagepic} class="card-img-top" alt="Messagepic"/>
                                 <h5 id="text" class="card-title">Edit your profile and keep it up to date to enhance engagement and find the best investor matches.</h5>
                                 <Link to="/Message"><button id="btnText" type="button" class="btn btn-dark">Message </button></Link>
                             </div>

@@ -45,6 +45,19 @@ const Fifth =()=>{
             updateStartup(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
     };
 
+    const deleteStartup = (email) => {
+        Axios.delete(`http://localhost:3001/deletestartup/${email}`).then((response) => {
+          setStartUpList(
+            startupList.filter((val) => {
+              return val.email != email;
+            })
+          );
+        });
+      };
+    const DeleteStartup = () =>{
+        getEmployees();
+        deleteStartup(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
+    };
         return(
             <div >
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -106,6 +119,7 @@ const Fifth =()=>{
                     <textarea class="textbox" Style="width:100%;border-color:#C4C4C4;"rows = "5" cols = "60" name = "description" required value={companyDesc} onChange={(event)=>setcompanyDesc(event.target.value)}></textarea><br/>
                     <Link to ="/Seventh"><button id = "Create" type="button" onClick={UpdateStartup}>Update Profile</button></Link>
                     <Link to ="/Seventh"><button id = "Cancel" type="button">Cancel</button></Link>
+                    <Link to ="/"><button id = "Delete" type="button" onClick={DeleteStartup}>Delete Profile</button></Link>
                 </form>
                 
             </div>

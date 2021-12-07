@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 import './styles/Navbar.css';
 import './styles/page1.css';
 import './styles/page2.css';
-import Startuppic from '../photos/start-up.png';
-import Investorpic from '../photos/investor.png';
+import Startpic from '../photos/start.png';
+
 const AboutUs = () => {
     
         return (
@@ -33,32 +33,10 @@ const AboutUs = () => {
 
                 <h1 id="header1">About Us</h1>
                 <h3 id="header2" class="mb-5">Making it accessible, easy, efficient and fun</h3>
-                <div id = "navcard" class="card mb-2">
-                 <div class="row g-0">
-                    <div class="col-md-3">
-                    </div>
-                        <div class="col-md-3">
-                        <div class="card h-100">
-                        <div class="card-body">
-                            <img id="investorIMG" src={Investorpic} class="card-img-top img" alt="investorIMG"/>
-                            <h5 id="text" class="card-title">We help you find the perfect investments</h5>
-                            <Link to="/InvestorsSignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img id="startUpIMG" src={Startuppic} class="card-img-top img" alt="startUpIMG"/>
-                            <h5 id="text" class="card-title">We help you match with the perfect investors</h5>
-                            <Link to="/StartUpsSignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                    </div>
-                 </div>
-                </div>
+                <img id="startUpIMG1" src={Startpic} class='img' alt="startpicture"/>
+                <h3 id="header3" style={{marginBottom:'40px'}}>Suits Up an interactive platform for business and startups to connect with investors and vice versa. It is an innovative, accessible, efficient and easy way for companies to find suitable investors that can help scale their businesses. It also helps investors to connect and collaborate with businesses that are compatible with the investment portfolios of the investors. The platform facilitates these connections in an unbiased process where either side can make relevant connections for their business.</h3>
+               
+                
             </div> 
         )
    

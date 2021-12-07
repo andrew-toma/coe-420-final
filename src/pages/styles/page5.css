@@ -17,12 +17,26 @@
   font-size: medium;
   font-weight: bold;
   color: White;
+  background-color: #ff9e2d;
+  border-radius: 3px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  float: right;
+  margin-top: 20px;
+}
+#Delete {
+  height: 40px;
+  width: 150px;
+  font-size: medium;
+  font-weight: bold;
+  color: White;
   background-color: red;
   border-radius: 3px;
   border: 0px;
   font-family: Verdana, sans-serif;
   float: right;
   margin-top: 20px;
+  margin-right: 8px;
 }
 .container {
   background-image: linear-gradient(to right, rgb(240, 68, 111), #ff9e2d);
