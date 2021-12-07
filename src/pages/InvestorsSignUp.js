@@ -42,40 +42,7 @@ const InvestorsSignUp = ()=>{
       ]);
     });
   };
-  const getEmployees = () => {
-    Axios.get("http://localhost:3001/employees").then((response) => {
-      setinvestorList(response.data);
-    });
-  };
-  // const updateInvestor = (id) => {
-  //   Axios.put("http://localhost:3001/update", { wage: newWage, id: id }).then(
-  //     (response) => {
-  //       setinvestorList(
-  //         investorList.map((val) => {
-  //           return val.id == id
-  //             ? {
-  //                 id: val.id,
-  //                 companyName: val.companyName,
-  //                 firstName: val.firstName,
-  //                 lastName: val.lastName,
-  //                 email: val.email,
-  //                 password: val.password,
-  //               }
-  //             : val;
-  //         })
-  //       );
-  //     }
-  //   );
-  // };
-  const deleteEmployee = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
-      setinvestorList(
-        investorList.filter((val) => {
-          return val.id != id;
-        })
-      );
-    });
-  };
+    
   //USER AUTENTICATION FUNCTIONS
   const clearInputs = ()=>{
     setEmail('');

@@ -15,8 +15,10 @@ import viewBlog from "./pages/viewBlog";
 import Blogs from './pages/Blogs';
 import StartUpFilter from './pages/StartUpFilter';
 import InvestorFilter from'./pages/InvestorFilter';
+import StartupsNav from './pages/StartupsNav';
+import InvestorsNav from './pages/InvestorsNav';
+import AboutUs from './pages/AboutUs';
 import viewProfile from'./pages/viewProfile';
-
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -34,6 +36,9 @@ const App = () =>{
    
     <Switch>
       <Route exact path="/" component={First}/>
+      <Route path="/StartupsNav" component={StartupsNav} />
+      <Route path="/InvestorsNav" component={InvestorsNav} />
+      <Route path="/AboutUs" component={AboutUs} />
       <Route path="/Second" component={Second} />
       <Route path="/StartUpsSignUp" component={StartUpsSignUp} />
       <Route path="/InvestorsSignUp" component={InvestorsSignUp} />
@@ -54,7 +59,9 @@ const App = () =>{
     
     </div>
     </Router> 
-   
+  //  <div>
+  //    <StartupsNav/>
+  //  </div>
     
   );
 }

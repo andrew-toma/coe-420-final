@@ -41,6 +41,21 @@ const Sixth =()=>{
             getEmployees();
             updateInvestor(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
     };
+
+    const deleteInvestor = (email) => {
+        Axios.delete(`http://localhost:3001/deleteinvestor/${email}`).then((response) => {
+          setinvestorList(
+            investorList.filter((val) => {
+              return val.email != email;
+            })
+          );
+        });
+      };
+    const DeleteInvestor = () =>{
+        getEmployees();
+        deleteInvestor(JSON.parse(localStorage.getItem("axiosresponse"))[0].email);
+    };
+
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -74,6 +89,7 @@ const Sixth =()=>{
                     <input class="input textbox"type="text" placeholder="+ --- --- --- ----" required value={phoneNumber} onChange={(event)=>setphoneNumber(event.target.value)}/>
                     <Link to ="/Eighth"><button id = "Create" type="button" onClick={UpdateInvestor}>Update Profile</button></Link>
                     <Link to ="/Eighth"><button id = "Cancel" type="button">Cancel</button></Link>
+                    <Link to ="/"><button id = "Delete" type="button" onClick={DeleteInvestor}>Delete Profile</button></Link>
                     </web>
                 </form>
 

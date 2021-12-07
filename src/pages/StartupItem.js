@@ -13,7 +13,7 @@ const StartupItem = ({ val }) => {
   return (
     <div className="col-sm-4">
       <div className="card my-2">
-        <img id="cardimg" src={val.blogs} className="card-img-top" alt="" />
+        <img id="cardimg" src={val.blog} className="card-img-top" alt="" />
         <div className="card-body">
           <h5 className="card-title">
           <strong>{val.companyName}</strong>

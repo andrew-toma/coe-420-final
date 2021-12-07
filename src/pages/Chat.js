@@ -23,9 +23,6 @@ function Chat() {
                                 <div class="col-md-7">
                                 </div>
                                 <div class="col-md-5">
-                                    <button id = "investors" type="button">Investors</button>
-                                    <button id = "startUps" type="button">Start-Ups</button>
-                                    <button id = "about" type="button">About</button> 
                                     <Link to="/Seventh"><button id = "signUp" type="button"> Go Back</button></Link> 
                                 </div>
                             </div>

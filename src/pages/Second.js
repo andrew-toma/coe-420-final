@@ -19,9 +19,9 @@ const Second =()=>{
                                 <div class="col-md-6">
                                 </div>
                                 <div class="col-md-6">
-                                    <button id = "investors" type="button">Investors</button>
-                                    <button id = "startUps" type="button">Start-Ups</button>
-                                    <button id = "about" type="button">About</button>
+                                    <Link to="/InvestorsNav"><button id = "investors" type="button">Investors</button></Link>
+                                    <Link to="/StartupsNav"><button id = "startUps" type="button">Start-Ups</button></Link>
+                                    <Link to="/AboutUs"><button id = "about" type="button">About</button></Link>
                                     <Link to="/Login"><button id = "login" type="button">Log In</button></Link>
                                     <Link to="/Second"><button id = "signUp" type="button">Sign Up</button></Link>
                                 </div>
@@ -39,7 +39,7 @@ const Second =()=>{
                         <div class="card h-100">
                         <div class="card-body">
                             <img id="investorIMG" src={Investorpic} class="card-img-top img" alt="investorIMG"/>
-                            <h5 id="text" class="card-title">Find the perfect verified start-ups for your investments.</h5>
+                            <h5 id="text" class="card-title">Find the perfect verified start-ups for your investments</h5>
                             <Link to="/InvestorsSignUp"><button id="btnText" type="button" class="btn btn-dark">Investor</button></Link>
                         </div>
                         </div>
@@ -48,7 +48,7 @@ const Second =()=>{
                     <div class="card h-100">
                         <div class="card-body">
                             <img id="startUpIMG" src={Startuppic} class="card-img-top img" alt="startUpIMG"/>
-                            <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
+                            <h5 id="text" class="card-title">Create your company profile and start your journey</h5>
                             <Link to="/StartUpsSignUp"><button id="btnText" type="button" class="btn btn-dark">Start-Up</button></Link>
                         </div>
                         </div>
