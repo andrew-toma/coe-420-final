@@ -1,38 +1,37 @@
 @charset "UTF-8";
- #startpicture{
- width :70%;
- height:100%;
- margin-left:90px;
- border-color:transparent;
- border-radius: 0px;
- }
- #motto{
- font-weight:bold;
- color:black;
- margin-left:40px;
- margin-top:70px;
- font-size:50px;
- margin-top:25px;
- }
- #mottodesc{
- color:black;
- margin-left:40px;
- font-size:25px;
- }
- #getStarted{
- height:50px;
- width:300px;
- font-Size:30px;
- font-weight: bold;
- color:White;
- background-color: #FF9E2D;
- border-radius: 25px;
- border: 0px;
- font-family:Verdana, sans-serif;
- margin-left:120px;
- margin-top:10px;
- 
- }
+#startpicture {
+  width: 70%;
+  height: 100%;
+  margin-left: 90px;
+  border-color: transparent;
+  border-radius: 0px;
+}
+#motto {
+  font-weight: bold;
+  color: black;
+  margin-left: 40px;
+  margin-top: 70px;
+  font-size: 50px;
+  margin-top: 25px;
+}
+#mottodesc {
+  color: black;
+  margin-left: 40px;
+  font-size: 25px;
+}
+#getStarted {
+  height: 50px;
+  width: 300px;
+  font-size: 30px;
+  font-weight: bold;
+  color: White;
+  background-color: #ff9e2d;
+  border-radius: 25px;
+  border: 0px;
+  font-family: Verdana, sans-serif;
+  margin-left: 120px;
+  margin-top: 10px;
+}
 .dropbtn {
   background-color: #04aa6d;
   color: white;
@@ -51,6 +50,9 @@
   float: right;
   position: relative;
   display: inline-block;
+}
+#mottoCard {
+  border: none;
 }
 
 .dropdown-content {
@@ -82,13 +84,10 @@
   display: block;
 }
 
-.startupsNav{
-
+.startupsNav {
   align-items: center;
 }
 
-h2{
+h2 {
   align-items: center;
-
 }
-

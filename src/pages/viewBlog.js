@@ -45,8 +45,8 @@ const ViewBlog = ()=>{
                                     */}
                                     <Link to="/FileUpload"><button id = "delete" type="button" >Delete</button></Link>
                                     <Link to="/FileUpload"><button id = "update" type="button" >Update</button></Link>
-                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
-                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                    <Link to="/viewProfile"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/viewProfile"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
                                 </div>
                             </div>
                         </div>

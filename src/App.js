@@ -62,7 +62,7 @@ const App = () =>{
       <Route path="/StartUpFilter" component={StartUpFilter} />
       <Route path="/InvestorFilter" component={InvestorFilter} />
       <Route path="/Form" component={Form} />
-      <Route path="/ViewForm" component={ViewForm} />
+
 
     </Switch>
     

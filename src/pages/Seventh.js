@@ -63,8 +63,8 @@ const Seventh =({handleLogout})=>{
                                 </div>
                                 <div class="col-md-3">
                                     <Link to="/Login"><button id = "signUp" type="button" onClick={handleLogout} style={{marginRight:'8px'}}>Logout</button></Link> 
-                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
-                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link>
+                                    <Link to="/viewProfile"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/viewProfile"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ const Seventh =({handleLogout})=>{
                         <div class="card h-100">
                             <div class="card-body">
                                 <img id="startUpIMG" src={FindMatchespic} class="card-img-top img" alt="FindMatchespic"/>
-                                <h5 id="text" class="card-title">Create your company profile and start your journey.</h5>
+                                <h5 id="text" class="card-title">Create your company profile and start yourey journ.</h5>
                                 <Link to="/InvestorFilter"><button id="btnText" type="button" class="btn btn-dark">Find Matches</button></Link>
                             </div>
                         </div>

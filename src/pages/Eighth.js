@@ -41,7 +41,7 @@ const Eighth =({handleLogout})=>{
                             <div class="card-body">
                                 <img id="investorIMG" src={PostBlogpic} class="card-img-top" alt="ViewBlogpic"/>
                                 <h5 id="text" class="card-title">View blog posts to connect with Investors and like-minded Businesses.</h5>
-                                <button id="btnText" type="button" class="btn btn-dark">View Blogs</button>
+                                <Link to="/Form"><button id="btnText" type="button" class="btn btn-dark">View Blogs</button></Link>
                             </div>
                             </div>
                         </div>

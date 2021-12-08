@@ -93,8 +93,8 @@ const FileUpload = () => {
                                     {/*<button id = "investors" type="button">Investors</button>
                                     <button id = "startUps" type="button">Start-Ups</button>
                                     */}
-                                    <Link to="/Fifth"><button id = "accText" type="button">Account</button></Link>
-                                    <Link to="/Fifth"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
+                                    <Link to="/viewProfile"><button id = "accText" type="button">Account</button></Link>
+                                    <Link to="/viewProfile"><button id = "account" type="button"> <FaRegUser icon="fa-solid fa-coffee" size={25}></FaRegUser> </button></Link> 
                                 </div>
                             </div>
                         </div>

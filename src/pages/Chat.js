@@ -20,7 +20,7 @@ function Chat() {
                     <div class="navbar-nav">
                         <div id = "navcard" class="card mb-2">
                             <div class="row g-0">
-                                <div class="col-md-7">
+                                <div class="col-md-5">
                                 </div>
                                 <div class="col-md-5">
                                     <Link to="/Seventh"><button id = "signUp" type="button"> Go Back</button></Link> 
