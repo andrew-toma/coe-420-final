@@ -18,7 +18,7 @@ function Chat() {
                 <span><img id = "logo" src="logo.png" alt="logo"/></span>
                 <div class="container-fluid">
                     <div class="navbar-nav">
-                        <div id = "navcard" class="card mb-2">
+                        <div id = "navcard" class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-5">
                                 </div>
